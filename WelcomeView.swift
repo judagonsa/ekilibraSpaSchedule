@@ -17,6 +17,8 @@ struct WelcomeView: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: 250, height: 250)
+                .clipShape(Circle())
+                .shadow(radius: 10)
             
             Text("Bienvenido")
                 .textWelcome()
