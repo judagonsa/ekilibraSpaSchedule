@@ -52,4 +52,11 @@ extension Text {
             .foregroundStyle(colorText)
             .shadow(radius: 1)
     }
+    
+    func titleView () -> some View {
+        return self
+            .font(.system(.largeTitle, design: .rounded))
+            .bold()
+            .padding(.vertical, 18)
+    }
 }

@@ -15,7 +15,7 @@ class RegisterViewModel: ObservableObject {
     @Published var lastName = ""
     @Published var isValidLastName = true
     
-    @Published var age: String?
+    @Published var age = ""
     @Published var isValidAge = true
     
     @Published var numberPhone = ""
@@ -49,7 +49,7 @@ class RegisterViewModel: ObservableObject {
         $age
             .receive(on: RunLoop.main)
             .map { age in
-                return self.isRealTime ? Int(age ?? "0") ?? 0 > 10 : true
+                return self.isRealTime ? Int(age) ?? 0 > 10 : true
             }
             .assign(to: \.isValidAge, on: self)
             .store(in: &cancellableSet)
@@ -76,7 +76,7 @@ class RegisterViewModel: ObservableObject {
     func validationField() -> Bool {
         isValidName = name.count > 3
         isValidLastName = lastName.count > 3
-        isValidAge = age != "" ? (Int(age!)! > 10 ? true : false) : false
+        isValidAge = age != "" ? (Int(age)! > 10 ? true : false) : false
         isValidNumberPhone = numberPhone.count == 10
         isValidGender = !gender.isEmpty
         
