@@ -20,6 +20,8 @@
 		918992D42C2B8CD600EFBFA1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918992D32C2B8CD600EFBFA1 /* UserModel.swift */; };
 		918992D62C2B8CEF00EFBFA1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918992D52C2B8CEF00EFBFA1 /* RegisterViewModel.swift */; };
 		918992D82C2B941400EFBFA1 /* TextFieldsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918992D72C2B941400EFBFA1 /* TextFieldsHelper.swift */; };
+		9190037B2C2E4ADE00C92B8B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190037A2C2E4ADE00C92B8B /* LoginView.swift */; };
+		9190037D2C2E4B7800C92B8B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190037C2C2E4B7800C92B8B /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		918992D32C2B8CD600EFBFA1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		918992D52C2B8CEF00EFBFA1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		918992D72C2B941400EFBFA1 /* TextFieldsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsHelper.swift; sourceTree = "<group>"; };
+		9190037A2C2E4ADE00C92B8B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9190037C2C2E4B7800C92B8B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 				914BF6A72C2B416F00BDE4E0 /* Helpers */,
 				914BF6A22C2B3EC700BDE4E0 /* WelcomeView */,
 				918992D02C2B8C7400EFBFA1 /* RegisterView */,
+				919003792C2E4AD000C92B8B /* LoginView */,
 				914BF6772C2B3D5300BDE4E0 /* SkilibraSpaApp.swift */,
 				914BF67B2C2B3D5400BDE4E0 /* Assets.xcassets */,
 				914BF67D2C2B3D5400BDE4E0 /* SkilibraSpa.entitlements */,
@@ -177,6 +182,15 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		919003792C2E4AD000C92B8B /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				9190037C2C2E4B7800C92B8B /* LoginViewModel.swift */,
+				9190037A2C2E4ADE00C92B8B /* LoginView.swift */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,10 +326,12 @@
 				914BF6A92C2B418B00BDE4E0 /* TextsHelper.swift in Sources */,
 				918992D22C2B8C8400EFBFA1 /* RegisterView.swift in Sources */,
 				918992D62C2B8CEF00EFBFA1 /* RegisterViewModel.swift in Sources */,
+				9190037B2C2E4ADE00C92B8B /* LoginView.swift in Sources */,
 				918992D42C2B8CD600EFBFA1 /* UserModel.swift in Sources */,
 				914BF6AB2C2B46CA00BDE4E0 /* ButtonsHelper.swift in Sources */,
 				918992D82C2B941400EFBFA1 /* TextFieldsHelper.swift in Sources */,
 				914BF6A42C2B3EFD00BDE4E0 /* WelcomeView.swift in Sources */,
+				9190037D2C2E4B7800C92B8B /* LoginViewModel.swift in Sources */,
 				914BF6782C2B3D5300BDE4E0 /* SkilibraSpaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
