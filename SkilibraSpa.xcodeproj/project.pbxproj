@@ -107,6 +107,7 @@
 		914BF6762C2B3D5300BDE4E0 /* SkilibraSpa */ = {
 			isa = PBXGroup;
 			children = (
+				919003782C2E441600C92B8B /* Models */,
 				914BF6A72C2B416F00BDE4E0 /* Helpers */,
 				914BF6A22C2B3EC700BDE4E0 /* WelcomeView */,
 				918992D02C2B8C7400EFBFA1 /* RegisterView */,
@@ -169,6 +170,13 @@
 				918992D12C2B8C8400EFBFA1 /* RegisterView.swift */,
 			);
 			path = RegisterView;
+			sourceTree = "<group>";
+		};
+		919003782C2E441600C92B8B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -35,48 +35,54 @@ struct RegisterView: View {
             }
             
             ScrollView {
-                
-                FormTextFfield(nameField: "Nombre", valueField: $viewModel.name)
-                if !viewModel.isValidName {
-                    RequirementText(requirementText: "Mínimo 3 caracteres")
-                }
-                
-                FormTextFfield(nameField: "Apellido", valueField: $viewModel.lastName)
-                if !viewModel.isValidLastName {
-                    RequirementText(requirementText: "Mínimo 3 caracteres")
-                }
-                
-                FormTextFfield(nameField: "Edad", valueField: $viewModel.age)
-                
-                if !viewModel.isValidAge {
-                    RequirementText(iconName: "calendar.badge.clock", requirementText: "Favor ingresa una edad")
-                }
-                
-                //seleccionar país (indicativo) con un servicio
-                FormTextFfield(nameField: "Número de teléfono", valueField: $viewModel.numberPhone)
-                if !viewModel.isValidNumberPhone {
-                    RequirementText(iconName: "candybarphone", requirementText: "Número teléfonico inválido")
-                }
-                Menu {
-                    Section("Género") {
-                        Button("Hombre") {
-                            viewModel.gender = "Hombre"
-                        }
-                        Button("Mujer") {
-                            viewModel.gender = "Mujer"
-                        }
-                        Button("Otro") {
-                            viewModel.gender = "Otro"
-                        }
+                    
+                VStack (spacing: 5) {
+                    FormTextFfield(nameField: "Nombre", valueField: $viewModel.name)
+                    if !viewModel.isValidName {
+                        RequirementText(requirementText: "Mínimo 3 caracteres")
                     }
-                } label: {
-                    FormTextFfield(nameField: "Género", valueField: $viewModel.gender)
-                }
-                
-                if !viewModel.isValidGender {
-                    RequirementText(iconName: "filemenu.and.selection", requirementText: "Debes seleccionar el género")
+                    
+                    FormTextFfield(nameField: "Apellido", valueField: $viewModel.lastName)
+                    if !viewModel.isValidLastName {
+                        RequirementText(requirementText: "Mínimo 3 caracteres")
+                    }
+                    
+                    FormTextFfield(nameField: "Edad", valueField: $viewModel.age)
+                    
+                    if !viewModel.isValidAge {
+                        RequirementText(
+                            iconName: "calendar.badge.clock",
+                            requirementText: viewModel.age == "" ? "Favor ingresa una edad" : Int(viewModel.age)! < 15 ? "Debes ingresar una edad mayor a 15 años" : Int(viewModel.age)! >= 80 ? "Debes ingresar una edad menor a 80 años" : ""
+                        )
+                    }
+                    
+                    //seleccionar país (indicativo) con un servicio
+                    FormTextFfield(nameField: "Número de teléfono", valueField: $viewModel.numberPhone)
+                    if !viewModel.isValidNumberPhone {
+                        RequirementText(iconName: "candybarphone", requirementText: "Número teléfonico inválido")
+                    }
+                    
+                    Menu {
+                        Section("Género") {
+                            Button("Hombre") {
+                                viewModel.gender = "Hombre"
+                            }
+                            Button("Mujer") {
+                                viewModel.gender = "Mujer"
+                            }
+                            Button("Otro") {
+                                viewModel.gender = "Otro"
+                            }
+                        }
+                    } label: {
+                        FormTextFfield(nameField: "Género", valueField: $viewModel.gender)
+                    }
+                    if !viewModel.isValidGender {
+                        RequirementText(iconName: "filemenu.and.selection", requirementText: "Debes seleccionar el género")
+                    }
                 }
             }
+            .scrollDismissesKeyboard(.automatic)
             
             Spacer()
             

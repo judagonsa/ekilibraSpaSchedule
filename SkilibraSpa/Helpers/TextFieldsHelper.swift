@@ -19,6 +19,7 @@ extension TextField {
             .padding(.horizontal)
             .padding(.vertical, 5)
             .multilineTextAlignment(.leading)
+            .foregroundStyle(.black)
     }
 }
 
@@ -30,7 +31,16 @@ struct FormTextFfield: View {
     var isNumber = false
     
     var body: some View {
-        VStack {
+        VStack (alignment: .leading, spacing: -2) {
+            HStack {
+                if !valueField.isEmpty {
+                    Text(nameField)
+                        .font(.system(size: 13, design: .rounded))
+                        .padding(.horizontal)
+                        .foregroundStyle(.gray)
+                }
+            }
+            
             if isSecure {
                 //TODO: Contraseña segura
             }else if isEmail {
