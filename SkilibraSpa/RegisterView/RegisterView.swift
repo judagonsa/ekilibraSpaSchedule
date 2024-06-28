@@ -57,8 +57,8 @@ struct RegisterView: View {
                     }
                     
                     //seleccionar país (indicativo) con un servicio
-                    FormTextFfield(nameField: "Número de teléfono", valueField: $viewModel.numberPhone)
-                    if !viewModel.isValidNumberPhone {
+                    FormTextFfield(nameField: "Número de teléfono", valueField: $viewModel.phoneNumber)
+                    if !viewModel.isValidPhoneNumber {
                         RequirementText(iconName: "candybarphone", requirementText: "Número teléfonico inválido")
                     }
                     
@@ -91,7 +91,7 @@ struct RegisterView: View {
                     let profile = UserModel(
                         name: viewModel.name,
                         lastName: viewModel.lastName,
-                        numberPhone: viewModel.numberPhone,
+                        phoneNumber: viewModel.phoneNumber,
                         age: viewModel.age,
                         gender: viewModel.gender,
                         observations: ""

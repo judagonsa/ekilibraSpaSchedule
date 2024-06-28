@@ -18,8 +18,8 @@ class RegisterViewModel: ObservableObject {
     @Published var age = ""
     @Published var isValidAge = true
     
-    @Published var numberPhone = ""
-    @Published var isValidNumberPhone = true
+    @Published var phoneNumber = ""
+    @Published var isValidPhoneNumber = true
     
     @Published var gender = ""
     @Published var isValidGender = true
@@ -56,12 +56,12 @@ class RegisterViewModel: ObservableObject {
         
         //TODO: validación indicativo
         
-        $numberPhone
+        $phoneNumber
             .receive(on: RunLoop.main)
             .map { numberPhone in
                 return self.isRealTime ? numberPhone.count == 10 : true
             }
-            .assign(to: \.isValidNumberPhone, on: self)
+            .assign(to: \.isValidPhoneNumber, on: self)
             .store(in: &cancellableSet)
         
         $gender
@@ -77,9 +77,9 @@ class RegisterViewModel: ObservableObject {
         isValidName = name.count > 3
         isValidLastName = lastName.count > 3
         isValidAge = age != "" ? ((Int(age)! >= 15 && Int(age)! < 80) ? true : false) : false
-        isValidNumberPhone = numberPhone.count == 10
+        isValidPhoneNumber = phoneNumber.count == 10
         isValidGender = !gender.isEmpty
         
-        return isValidName && isValidLastName && isValidAge && isValidNumberPhone && isValidGender
+        return isValidName && isValidLastName && isValidAge && isValidPhoneNumber && isValidGender
     }
 }

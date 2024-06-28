@@ -8,15 +8,15 @@
 class UserModel: Codable {
     var name: String
     var lastName: String
-    var numberPhone: String
+    var phoneNumber: String
     var age: String
     var gender: String
     var observations: String
     
-    init(name: String, lastName: String, numberPhone: String, age: String, gender: String, observations: String) {
+    init(name: String, lastName: String, phoneNumber: String, age: String, gender: String, observations: String) {
         self.name = name
         self.lastName = lastName
-        self.numberPhone = numberPhone
+        self.phoneNumber = phoneNumber
         self.age = age
         self.gender = gender
         self.observations = observations
