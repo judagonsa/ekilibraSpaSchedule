@@ -59,7 +59,7 @@ struct RegisterView: View {
                     //seleccionar país (indicativo) con un servicio
                     FormTextFfield(nameField: "Número de teléfono", valueField: $viewModel.phoneNumber)
                     if !viewModel.isValidPhoneNumber {
-                        RequirementText(iconName: "candybarphone", requirementText: "Número teléfonico inválido")
+                        RequirementText(iconName: "candybarphone", requirementText: viewModel.phoneNumber.isEmpty ? "Favor ingresar el número telefónico" : "Número teléfonico inválido")
                     }
                     
                     Menu {

@@ -13,7 +13,7 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-      
+            
             Spacer()
             
             Image(.logoWelcome)
@@ -26,12 +26,27 @@ struct LoginView: View {
             
             
             FormTextFfield(nameField: "Teléfono", valueField: $viewModel.phoneNumber)
+            if !viewModel.isValidPhoneNumber {
+                RequirementText(
+                    iconName: "candybarphone",
+                    requirementText: viewModel.phoneNumber.isEmpty
+                    ? "Favor ingresar el número telefónico"
+                    : "Número teléfonico inválido"
+                )
+            }
             
-            FormTextFfield(nameField: "Contraseña", valueField: $viewModel.email)
+            FormTextFfield(nameField: "Contraseña", valueField: $viewModel.password)
+            if !viewModel.isValidPasword {
+                RequirementText(requirementText: "Favor ingrese una contraseña") //TODO: mayor de 4 dígitos
+            }
             
             Button {
+                if viewModel.validationField() {
+                    
+                } else {
+                    viewModel.isRealTime = true
+                }
                 
-                 
             } label: {
                 Text("Iniciar sesión")
             }
