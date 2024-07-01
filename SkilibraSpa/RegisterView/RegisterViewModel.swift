@@ -9,6 +9,8 @@ import Foundation
 import Combine
 
 class RegisterViewModel: ObservableObject {
+    @Published var isRegister = false
+    
     @Published var name = ""
     @Published var isValidName = true
     
@@ -83,21 +85,23 @@ class RegisterViewModel: ObservableObject {
             .assign(to: \.isValidGender, on: self)
             .store(in: &cancellableSet)
         
-        $password
-            .receive(on: RunLoop.main)
-            .map { password in
-                return self.isRealTime ? self.isValidPasswordRegex(password: password) : true
-            }
-            .assign(to: \.isValidPassword, on: self)
-            .store(in: &cancellableSet)
-        
-        $confirmPassword
-            .receive(on: RunLoop.main)
-            .map { confirmPassword in
-                return self.isRealTime ? self.isSomePassword(confirmPassword: confirmPassword) : true
-            }
-            .assign(to: \.isValidConfirmPassword, on: self)
-            .store(in: &cancellableSet)
+        if isRegister {
+            $password
+                .receive(on: RunLoop.main)
+                .map { password in
+                    return self.isRealTime ? self.isValidPasswordRegex(password: password) : true
+                }
+                .assign(to: \.isValidPassword, on: self)
+                .store(in: &cancellableSet)
+            
+            $confirmPassword
+                .receive(on: RunLoop.main)
+                .map { confirmPassword in
+                    return self.isRealTime ? self.isSomePassword(confirmPassword: confirmPassword) : true
+                }
+                .assign(to: \.isValidConfirmPassword, on: self)
+                .store(in: &cancellableSet)
+        }
     }
     
     func isValidPasswordRegex(password: String) -> Bool {
@@ -121,9 +125,14 @@ class RegisterViewModel: ObservableObject {
         isValidAge = age != "" ? ((Int(age)! >= 15 && Int(age)! < 80) ? true : false) : false
         isValidPhoneNumber = phoneNumber.count == 10
         isValidGender = !gender.isEmpty
-        isValidPassword = isValidPasswordRegex(password: password)
-        isValidConfirmPassword = isSomePassword(confirmPassword: confirmPassword)
+        
+        if isRegister {
+            isValidPassword = isValidPasswordRegex(password: password)
+            isValidConfirmPassword = isSomePassword(confirmPassword: confirmPassword)
+            return isValidName && isValidLastName && isValidAge && isValidPhoneNumber && isValidGender && isValidPassword && isValidConfirmPassword
+        }
         
         return isValidName && isValidLastName && isValidAge && isValidPhoneNumber && isValidGender
+        
     }
 }

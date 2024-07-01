@@ -100,25 +100,38 @@ struct RegisterView: View {
                         RequirementText(iconName: "filemenu.and.selection", requirementText: "Debes seleccionar el género")
                     }
                     
-                    
-                    FormSecureField(
-                        nameField: "Contraseña",
-                        valueField: $viewModel.password,
-                        isSecureField: $viewModel.showPassword
-                    )
-                    if !viewModel.isValidPassword {
-                        RequirementText(requirementText: "Contraseña no valida, debe contener una mayúscula y un número (mayor a 6 carácteres)") 
+                    if isRegister {
+                        FormSecureField(
+                            nameField: "Contraseña",
+                            valueField: $viewModel.password,
+                            isSecureField: $viewModel.showPassword
+                        )
+                        if !viewModel.isValidPassword {
+                            RequirementText(requirementText: "Contraseña no valida, debe contener una mayúscula y un número (mayor a 6 carácteres)")
+                        }
+                        
+                        FormSecureField(
+                            nameField: "Repetir contraseña",
+                            valueField: $viewModel.confirmPassword,
+                            isSecureField: $viewModel.showConfirmPassword
+                        )
+                        if !viewModel.isValidConfirmPassword && viewModel.isValidPassword {
+                            RequirementText(requirementText: "Las contraseñas no coinciden")
+                        }
                     }
                     
-                    FormSecureField(
-                        nameField: "Repetir contraseña",
-                        valueField: $viewModel.confirmPassword,
-                        isSecureField: $viewModel.showConfirmPassword
-                    )
-                    if !viewModel.isValidConfirmPassword && viewModel.isValidPassword {
-                        RequirementText(requirementText: "Las contraseñas no coinciden")
+                    if !isRegister {
+                        Button {
+                            //TODO: ir  la vista de cambiar contraseña revisar diseño para ubicación
+                        }label: {
+                            HStack{
+                                Spacer()
+                                Text("Cambiar contraseña")
+                                    .padding()
+                                    .foregroundStyle(.red)
+                            }
+                        }
                     }
-                    
                 }
             }
             .scrollDismissesKeyboard(.automatic)
@@ -133,10 +146,9 @@ struct RegisterView: View {
                         phoneNumber: viewModel.phoneNumber,
                         age: viewModel.age,
                         gender: viewModel.gender,
-                        
                         observations: ""
                     )
-                    
+                    print(profile.printData())
                     //.viewModel.saveProfile(profile: profile)
                     //guardar la contraseña en algún lado
                     
@@ -157,6 +169,9 @@ struct RegisterView: View {
                     }
                 }
             }
+        }
+        .onAppear {
+            viewModel.isRegister = isRegister
         }
     }
 }

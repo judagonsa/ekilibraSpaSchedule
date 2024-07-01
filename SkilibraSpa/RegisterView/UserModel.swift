@@ -21,4 +21,8 @@ class UserModel: Codable {
         self.gender = gender
         self.observations = observations
     }
+    
+    func printData() -> String {
+        return "name: \(name), lastName: \(lastName), phoneNumber: \(phoneNumber), age: \(age), gender: \(gender)"
+    }
 }
