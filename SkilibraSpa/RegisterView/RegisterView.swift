@@ -102,6 +102,16 @@ struct RegisterView: View {
                     }
                     
                     
+                    FormTextFfield(nameField: "Contraseña", valueField: $viewModel.password)
+                    if !viewModel.isValidPassword {
+                        RequirementText(requirementText: "Contraseña no valida, debe contener una mayúscula y un número (mayor a 6 carácteres)") 
+                    }
+                    
+                    FormTextFfield(nameField: "Repetir contraseña", valueField: $viewModel.confirmPassword)
+                    if !viewModel.isValidConfirmPassword && viewModel.isValidPassword {
+                        RequirementText(requirementText: "Las contraseñas no coinciden")
+                    }
+                    
                 }
             }
             .scrollDismissesKeyboard(.automatic)
@@ -116,10 +126,12 @@ struct RegisterView: View {
                         phoneNumber: viewModel.phoneNumber,
                         age: viewModel.age,
                         gender: viewModel.gender,
+                        
                         observations: ""
                     )
                     
                     //.viewModel.saveProfile(profile: profile)
+                    //guardar la contraseña en algún lado
                     
                 }else {
                     viewModel.isRealTime = true
