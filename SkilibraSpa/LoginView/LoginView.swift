@@ -25,7 +25,7 @@ struct LoginView: View {
                 .padding(.vertical, 30)
             
             
-            FormTextFfield(nameField: "Teléfono", valueField: $viewModel.phoneNumber)
+            FormTextField(nameField: "Teléfono", valueField: $viewModel.phoneNumber)
             if !viewModel.isValidPhoneNumber {
                 RequirementText(
                     iconName: "candybarphone",
@@ -35,7 +35,7 @@ struct LoginView: View {
                 )
             }
             
-            FormTextFfield(nameField: "Contraseña", valueField: $viewModel.password)
+            FormTextField(nameField: "Contraseña", valueField: $viewModel.password)
             if !viewModel.isValidPasword {
                 RequirementText(requirementText: "Favor ingrese una contraseña") //TODO: mayor de 4 dígitos
             }

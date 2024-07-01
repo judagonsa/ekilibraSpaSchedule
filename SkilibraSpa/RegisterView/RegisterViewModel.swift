@@ -33,6 +33,10 @@ class RegisterViewModel: ObservableObject {
     
     @Published var observations = ""
     
+    @Published var showPhoneInfo = false
+    @Published var showPassword = true
+    @Published var showConfirmPassword = true
+    
     @Published var isRealTime = false
     var cancellableSet: Set<AnyCancellable> = []
     

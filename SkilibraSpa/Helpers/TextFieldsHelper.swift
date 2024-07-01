@@ -29,10 +29,19 @@ extension TextField {
     }
 }
 
-struct FormTextFfield: View {
+extension SecureField {
+    func secureFormulary() -> some View {
+        return self
+            .font(.system(size: 18, weight: .light, design: .rounded))
+            .padding(10)
+            .textInputAutocapitalization(.never)
+            .padding(.vertical, 0.8)
+    }
+}
+
+struct FormTextField: View {
     var nameField = ""
     @Binding var valueField: String
-    var isSecure = false
     var isEmail = false
     var isNumber = false
     
@@ -45,11 +54,9 @@ struct FormTextFfield: View {
                         .padding(.horizontal)
                         .foregroundStyle(.gray)
                 }
-            }
+            } 
             
-            if isSecure {
-                //TODO: Contraseña segura
-            }else if isEmail {
+            if isEmail {
                 
                 TextField(nameField, text: $valueField)
                     .textFormulary()
@@ -69,6 +76,42 @@ struct FormTextFfield: View {
                 
             }
         }
+    }
+}
+
+struct FormSecureField: View {
+    var nameField = ""
+    @Binding var valueField: String
+    @Binding var isSecureField: Bool
+    
+    var body: some View {
+        HStack {
+            if isSecureField {
+                SecureField(nameField, text: $valueField)
+                    .secureFormulary()
+            }else {
+                TextField(nameField, text: $valueField)
+                    .font(.system(size: 18, weight: .light, design: .rounded))
+                    .padding(10)
+                    .textInputAutocapitalization(.never)
+            }
+            
+            Button {
+                isSecureField.toggle()
+            }label: {
+                Image(systemName: isSecureField ? "eye.fill" : "eye.slash.fill")
+                    .iconGeneral()
+                    .padding(.trailing)
+            }
+        }
+        .overlay {
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.gray, lineWidth: 0.5)
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 5)
+        .multilineTextAlignment(.leading)
+        .foregroundStyle(.black)
     }
 }
 

@@ -12,7 +12,6 @@ struct RegisterView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel = RegisterViewModel()
     @State var isRegister: Bool
-    @State var showPhoneInfo = false
     
     var body: some View {
         VStack {
@@ -38,17 +37,17 @@ struct RegisterView: View {
             ScrollView {
                     
                 VStack (spacing: 5) {
-                    FormTextFfield(nameField: "Nombre", valueField: $viewModel.name)
+                    FormTextField(nameField: "Nombre", valueField: $viewModel.name)
                     if !viewModel.isValidName {
                         RequirementText(requirementText: "Mínimo 3 caracteres")
                     }
                     
-                    FormTextFfield(nameField: "Apellido", valueField: $viewModel.lastName)
+                    FormTextField(nameField: "Apellido", valueField: $viewModel.lastName)
                     if !viewModel.isValidLastName {
                         RequirementText(requirementText: "Mínimo 3 caracteres")
                     }
                     
-                    FormTextFfield(nameField: "Edad", valueField: $viewModel.age)
+                    FormTextField(nameField: "Edad", valueField: $viewModel.age)
                     
                     if !viewModel.isValidAge {
                         RequirementText(
@@ -57,10 +56,10 @@ struct RegisterView: View {
                         )
                     }
                     HStack {
-                        FormTextFfield(nameField: "Número de teléfono", valueField: $viewModel.phoneNumber)
+                        FormTextField(nameField: "Número de teléfono", valueField: $viewModel.phoneNumber)
                         
                         Button {
-                            showPhoneInfo.toggle()
+                            viewModel.showPhoneInfo.toggle()
                         }label: {
                             Image(systemName: "questionmark.circle.fill")
                                 .resizable()
@@ -69,7 +68,7 @@ struct RegisterView: View {
                                 .padding(.trailing)
                                 .foregroundStyle(.red)
                         }
-                        .popover(isPresented: $showPhoneInfo, arrowEdge: .bottom) {
+                        .popover(isPresented: $viewModel.showPhoneInfo, arrowEdge: .bottom) {
                             Text("Información de solo colombia")
                                 .font(.system(size: 18, weight: .light, design: .rounded))
                                 .padding()
@@ -95,19 +94,27 @@ struct RegisterView: View {
                             }
                         }
                     } label: {
-                        FormTextFfield(nameField: "Género", valueField: $viewModel.gender)
+                        FormTextField(nameField: "Género", valueField: $viewModel.gender)
                     }
                     if !viewModel.isValidGender {
                         RequirementText(iconName: "filemenu.and.selection", requirementText: "Debes seleccionar el género")
                     }
                     
                     
-                    FormTextFfield(nameField: "Contraseña", valueField: $viewModel.password)
+                    FormSecureField(
+                        nameField: "Contraseña",
+                        valueField: $viewModel.password,
+                        isSecureField: $viewModel.showPassword
+                    )
                     if !viewModel.isValidPassword {
                         RequirementText(requirementText: "Contraseña no valida, debe contener una mayúscula y un número (mayor a 6 carácteres)") 
                     }
                     
-                    FormTextFfield(nameField: "Repetir contraseña", valueField: $viewModel.confirmPassword)
+                    FormSecureField(
+                        nameField: "Repetir contraseña",
+                        valueField: $viewModel.confirmPassword,
+                        isSecureField: $viewModel.showConfirmPassword
+                    )
                     if !viewModel.isValidConfirmPassword && viewModel.isValidPassword {
                         RequirementText(requirementText: "Las contraseñas no coinciden")
                     }

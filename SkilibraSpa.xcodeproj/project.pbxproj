@@ -16,6 +16,7 @@
 		914BF6A42C2B3EFD00BDE4E0 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BF6A32C2B3EFD00BDE4E0 /* WelcomeView.swift */; };
 		914BF6A92C2B418B00BDE4E0 /* TextsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BF6A82C2B418B00BDE4E0 /* TextsHelper.swift */; };
 		914BF6AB2C2B46CA00BDE4E0 /* ButtonsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BF6AA2C2B46CA00BDE4E0 /* ButtonsHelper.swift */; };
+		915CB3742C33637F009036BA /* ImagesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915CB3732C33637F009036BA /* ImagesHelper.swift */; };
 		918992D22C2B8C8400EFBFA1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918992D12C2B8C8400EFBFA1 /* RegisterView.swift */; };
 		918992D42C2B8CD600EFBFA1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918992D32C2B8CD600EFBFA1 /* UserModel.swift */; };
 		918992D62C2B8CEF00EFBFA1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918992D52C2B8CEF00EFBFA1 /* RegisterViewModel.swift */; };
@@ -55,6 +56,7 @@
 		914BF6A32C2B3EFD00BDE4E0 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = SOURCE_ROOT; };
 		914BF6A82C2B418B00BDE4E0 /* TextsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextsHelper.swift; sourceTree = "<group>"; };
 		914BF6AA2C2B46CA00BDE4E0 /* ButtonsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsHelper.swift; sourceTree = "<group>"; };
+		915CB3732C33637F009036BA /* ImagesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesHelper.swift; sourceTree = "<group>"; };
 		918992D12C2B8C8400EFBFA1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		918992D32C2B8CD600EFBFA1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		918992D52C2B8CEF00EFBFA1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				914BF6A82C2B418B00BDE4E0 /* TextsHelper.swift */,
 				914BF6AA2C2B46CA00BDE4E0 /* ButtonsHelper.swift */,
 				918992D72C2B941400EFBFA1 /* TextFieldsHelper.swift */,
+				915CB3732C33637F009036BA /* ImagesHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				918992D42C2B8CD600EFBFA1 /* UserModel.swift in Sources */,
 				914BF6AB2C2B46CA00BDE4E0 /* ButtonsHelper.swift in Sources */,
 				918992D82C2B941400EFBFA1 /* TextFieldsHelper.swift in Sources */,
+				915CB3742C33637F009036BA /* ImagesHelper.swift in Sources */,
 				914BF6A42C2B3EFD00BDE4E0 /* WelcomeView.swift in Sources */,
 				9190037D2C2E4B7800C92B8B /* LoginViewModel.swift in Sources */,
 				914BF6782C2B3D5300BDE4E0 /* SkilibraSpaApp.swift in Sources */,
