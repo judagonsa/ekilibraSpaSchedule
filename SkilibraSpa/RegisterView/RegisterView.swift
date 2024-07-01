@@ -12,6 +12,7 @@ struct RegisterView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel = RegisterViewModel()
     @State var isRegister: Bool
+    @State var showPhoneInfo = false
     
     var body: some View {
         VStack {
@@ -55,9 +56,28 @@ struct RegisterView: View {
                             requirementText: viewModel.age == "" ? "Favor ingresa una edad" : Int(viewModel.age)! < 15 ? "Debes ingresar una edad mayor a 15 años" : Int(viewModel.age)! >= 80 ? "Debes ingresar una edad menor a 80 años" : ""
                         )
                     }
+                    HStack {
+                        FormTextFfield(nameField: "Número de teléfono", valueField: $viewModel.phoneNumber)
+                        
+                        Button {
+                            showPhoneInfo.toggle()
+                        }label: {
+                            Image(systemName: "questionmark.circle.fill")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 30, height: 30)
+                                .padding(.trailing)
+                                .foregroundStyle(.red)
+                        }
+                        .popover(isPresented: $showPhoneInfo, arrowEdge: .bottom) {
+                            Text("Información de solo colombia")
+                                .font(.system(size: 18, weight: .light, design: .rounded))
+                                .padding()
+                                .presentationCompactAdaptation(.none)
+                        }
+                        
+                    }
                     
-                    //seleccionar país (indicativo) con un servicio
-                    FormTextFfield(nameField: "Número de teléfono", valueField: $viewModel.phoneNumber)
                     if !viewModel.isValidPhoneNumber {
                         RequirementText(iconName: "candybarphone", requirementText: viewModel.phoneNumber.isEmpty ? "Favor ingresar el número telefónico" : "Número teléfonico inválido")
                     }
@@ -80,6 +100,8 @@ struct RegisterView: View {
                     if !viewModel.isValidGender {
                         RequirementText(iconName: "filemenu.and.selection", requirementText: "Debes seleccionar el género")
                     }
+                    
+                    
                 }
             }
             .scrollDismissesKeyboard(.automatic)

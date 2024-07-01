@@ -8,6 +8,12 @@
 import SwiftUI
 
 extension TextField {
+    
+    func fontTextNormal() -> some View{
+        return self
+            .font(.system(size: 18, weight: .light, design: .rounded))
+    }
+    
     func textFormulary() -> some View {
         return self
             .font(.system(size: 18, weight: .light, design: .rounded))
