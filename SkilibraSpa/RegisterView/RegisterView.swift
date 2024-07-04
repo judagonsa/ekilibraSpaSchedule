@@ -55,22 +55,22 @@ struct RegisterView: View {
                             requirementText: viewModel.age == "" ? "Favor ingresa una edad" : Int(viewModel.age)! < 15 ? "Debes ingresar una edad mayor a 15 años" : Int(viewModel.age)! >= 80 ? "Debes ingresar una edad menor a 80 años" : ""
                         )
                     }
-                    HStack {
+                    ZStack {
                         FormTextField(nameField: "Número de teléfono", valueField: $viewModel.phoneNumber)
                         
-                        Button {
-                            viewModel.showPhoneInfo.toggle()
-                        }label: {
-                            Image(systemName: "questionmark.circle.fill")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 30, height: 30)
-                                .padding(.trailing)
-                                .foregroundStyle(.red)
-                        }
-                        .popover(isPresented: $viewModel.showPhoneInfo, arrowEdge: .bottom) {
-                            Text("Información de solo colombia")
-                                .textPopover()
+                        HStack {
+                            Spacer()
+                            Button {
+                                viewModel.showPhoneInfo.toggle()
+                            }label: {
+                                Image(systemName: "questionmark.circle.fill")
+                                    .iconQuestion()
+                                    .padding(.trailing, 20)
+                            }
+                            .popover(isPresented: $viewModel.showPhoneInfo, arrowEdge: .bottom) {
+                                Text("Información de solo colombia")
+                                    .textPopover()
+                            }
                         }
                         
                     }
@@ -143,11 +143,8 @@ struct RegisterView: View {
                                         viewModel.showObservationsInfo.toggle()
                                     }label: {
                                         Image(systemName: "questionmark.circle.fill")
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(width: 30, height: 30)
+                                            .iconQuestion()
                                             .padding(.trailing)
-                                            .foregroundStyle(.red)
                                             .padding(.all, 5)
                                     }
                                 }
