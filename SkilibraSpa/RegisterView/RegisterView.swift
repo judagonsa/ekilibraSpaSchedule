@@ -70,9 +70,7 @@ struct RegisterView: View {
                         }
                         .popover(isPresented: $viewModel.showPhoneInfo, arrowEdge: .bottom) {
                             Text("Información de solo colombia")
-                                .font(.system(size: 18, weight: .light, design: .rounded))
-                                .padding()
-                                .presentationCompactAdaptation(.none)
+                                .textPopover()
                         }
                         
                     }
@@ -118,6 +116,46 @@ struct RegisterView: View {
                         if !viewModel.isValidConfirmPassword && viewModel.isValidPassword {
                             RequirementText(requirementText: "Las contraseñas no coinciden")
                         }
+                        
+                        ZStack {
+                            TextEditor(text: $viewModel.observations)
+                                .textObservation()
+                                .onChange(of: viewModel.observations){ oldValue, newValue in
+                                    if oldValue.isEmpty || newValue.isEmpty {
+                                        viewModel.showObservationsInfo = true
+                                    }else {
+                                        viewModel.showObservationsInfo = false
+                                    }
+                                }
+                                .onTapGesture {
+                                    viewModel.showObservationsInfo = true
+                                }
+                                .popover(isPresented: $viewModel.showObservationsInfo, arrowEdge: .bottom) {
+                                    Text("Información de las observaciones")
+                                        .textPopover()
+                                }
+                            
+                            VStack{
+                                Spacer()
+                                HStack {
+                                    Spacer()
+                                    Button {
+                                        viewModel.showObservationsInfo.toggle()
+                                    }label: {
+                                        Image(systemName: "questionmark.circle.fill")
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 30, height: 30)
+                                            .padding(.trailing)
+                                            .foregroundStyle(.red)
+                                            .padding(.all, 5)
+                                    }
+                                }
+                            }
+                            
+                        }
+                        
+                        
                     }
                     
                     if !isRegister {
@@ -146,7 +184,7 @@ struct RegisterView: View {
                         phoneNumber: viewModel.phoneNumber,
                         age: viewModel.age,
                         gender: viewModel.gender,
-                        observations: ""
+                        observations: viewModel.observations
                     )
                     print(profile.printData())
                     //.viewModel.saveProfile(profile: profile)

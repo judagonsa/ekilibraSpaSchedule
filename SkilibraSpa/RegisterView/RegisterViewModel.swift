@@ -33,6 +33,7 @@ class RegisterViewModel: ObservableObject {
     @Published var isValidConfirmPassword = true
     @Published var isSamePasswords = true
     
+    @Published var showObservationsInfo = false
     @Published var observations = ""
     
     @Published var showPhoneInfo = false

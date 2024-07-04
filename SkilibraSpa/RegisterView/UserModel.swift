@@ -23,6 +23,6 @@ class UserModel: Codable {
     }
     
     func printData() -> String {
-        return "name: \(name), lastName: \(lastName), phoneNumber: \(phoneNumber), age: \(age), gender: \(gender)"
+        return "name: \(name), lastName: \(lastName), phoneNumber: \(phoneNumber), age: \(age), gender: \(gender), observation: \(observations)"
     }
 }

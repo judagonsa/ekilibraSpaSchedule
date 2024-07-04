@@ -59,4 +59,24 @@ extension Text {
             .bold()
             .padding(.vertical, 18)
     }
+    
+    func textPopover() -> some View {
+        return self
+            .font(.system(size: 18, weight: .light, design: .rounded))
+            .padding()
+            .presentationCompactAdaptation(.none)
+    }
+}
+
+extension TextEditor {
+    func textObservation() -> some View {
+        return self
+            .font(.system(size: 18, weight: .light, design: .rounded))
+            .frame(height: 100)
+            .overlay {
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(.gray ,style: StrokeStyle(lineWidth: 0.5))
+            }
+            .padding(.horizontal)
+    }
 }
