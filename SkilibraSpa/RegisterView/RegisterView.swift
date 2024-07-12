@@ -12,6 +12,8 @@ struct RegisterView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel = RegisterViewModel()
     @State var isRegister: Bool
+    @State var showHome = false
+    @State var showChangePassword = false
     
     var body: some View {
         VStack {
@@ -66,6 +68,7 @@ struct RegisterView: View {
                                 Image(systemName: "questionmark.circle.fill")
                                     .iconQuestion()
                                     .padding(.trailing, 20)
+                                    .padding(.top, viewModel.phoneNumber.isEmpty ? 0 : 12)
                             }
                             .popover(isPresented: $viewModel.showPhoneInfo, arrowEdge: .bottom) {
                                 Text("Información de solo colombia")
@@ -151,13 +154,11 @@ struct RegisterView: View {
                             }
                             
                         }
-                        
-                        
                     }
                     
                     if !isRegister {
                         Button {
-                            //TODO: ir  la vista de cambiar contraseña revisar diseño para ubicación
+                            showChangePassword.toggle()
                         }label: {
                             HStack{
                                 Spacer()
@@ -186,12 +187,9 @@ struct RegisterView: View {
                     print(profile.printData())
                     
                     if isRegister {
-                        if UserdefaultHelper.shared.saveProfile(profile) {
-                            print(UserdefaultHelper.shared.getProfile() ?? "error al obtener profie")
-                        }
-                        if KeychainManager.shared.savePassword(viewModel.password) {
-                            print("contraseña guardada")
-                            print(KeychainManager.shared.getPassword() ?? "Error al obtener contraseña")
+                        if UserdefaultHelper.shared.saveProfile(profile), KeychainManager.shared.savePassword(viewModel.password) {
+                            
+                            showHome.toggle()
                         }
                     }
                     
@@ -224,9 +222,15 @@ struct RegisterView: View {
                 viewModel.observations = profile.observations
             }
         }
+        .fullScreenCover(isPresented: $showHome) {
+            HomeView()
+        }
+        .fullScreenCover(isPresented: $showChangePassword) {
+            ChangePasswordView()
+        }
     }
 }
 
 #Preview {
-    RegisterView(isRegister: false)
+    RegisterView(isRegister: true)
 }

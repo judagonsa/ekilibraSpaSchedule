@@ -28,4 +28,13 @@ class UserdefaultHelper {
         
         return nil
     }
+    
+    func isFirstTime() -> Bool {
+        if let firstTime = UserDefaults.standard.object(forKey: "firstTime") as? Bool {
+            return firstTime
+        }else {
+            UserDefaults.standard.setValue(false, forKey: "firstTime")
+        }
+        return false
+    }
 }

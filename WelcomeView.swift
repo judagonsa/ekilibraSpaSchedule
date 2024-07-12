@@ -9,8 +9,10 @@ import SwiftUI
 
 struct WelcomeView: View {
     
+    //TODO: pasar a viewmodel
     @State var showRegister = false
     @State var showLogin = false
+    @State var showHome = false
     
     var body: some View {
         VStack (spacing: 20) {
@@ -52,6 +54,14 @@ struct WelcomeView: View {
         }
         .fullScreenCover(isPresented: $showRegister) {
             RegisterView(isRegister: true)
+        }
+        .fullScreenCover(isPresented: $showHome) {
+            HomeView()
+        }
+        .onAppear {
+            if UserdefaultHelper.shared.getProfile() != nil {
+                showHome.toggle()
+            }
         }
         
     }
