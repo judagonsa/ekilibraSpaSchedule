@@ -184,8 +184,11 @@ struct RegisterView: View {
                         observations: viewModel.observations
                     )
                     print(profile.printData())
-                    //.viewModel.saveProfile(profile: profile)
+                    
                     if isRegister {
+                        if UserdefaultHelper.shared.saveProfile(profile) {
+                            print(UserdefaultHelper.shared.getProfile() ?? "error al obtener profie")
+                        }
                         if KeychainManager.shared.savePassword(viewModel.password) {
                             print("contraseña guardada")
                             print(KeychainManager.shared.getPassword() ?? "Error al obtener contraseña")
@@ -212,11 +215,18 @@ struct RegisterView: View {
         }
         .onAppear {
             viewModel.isRegister = isRegister
-            //cargar datos si los hay
+            if !isRegister, let profile = UserdefaultHelper.shared.getProfile() {
+                viewModel.name = profile.name
+                viewModel.lastName = profile.lastName
+                viewModel.age = profile.age
+                viewModel.phoneNumber = profile.phoneNumber
+                viewModel.gender = profile.gender
+                viewModel.observations = profile.observations
+            }
         }
     }
 }
 
 #Preview {
-    RegisterView(isRegister: true)
+    RegisterView(isRegister: false)
 }
