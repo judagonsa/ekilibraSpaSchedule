@@ -185,7 +185,12 @@ struct RegisterView: View {
                     )
                     print(profile.printData())
                     //.viewModel.saveProfile(profile: profile)
-                    //guardar la contraseña en algún lado
+                    if isRegister {
+                        if KeychainManager.shared.savePassword(viewModel.password) {
+                            print("contraseña guardada")
+                            print(KeychainManager.shared.getPassword() ?? "Error al obtener contraseña")
+                        }
+                    }
                     
                 }else {
                     viewModel.isRealTime = true
@@ -207,6 +212,7 @@ struct RegisterView: View {
         }
         .onAppear {
             viewModel.isRegister = isRegister
+            //cargar datos si los hay
         }
     }
 }

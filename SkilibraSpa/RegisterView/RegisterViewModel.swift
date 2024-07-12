@@ -136,4 +136,16 @@ class RegisterViewModel: ObservableObject {
         return isValidName && isValidLastName && isValidAge && isValidPhoneNumber && isValidGender
         
     }
+    
+    func saveProfile() -> Bool{
+        
+        
+        return true
+    }
+    
+    func getProfile() -> UserModel?{
+        
+        
+        return nil
+    }
 }

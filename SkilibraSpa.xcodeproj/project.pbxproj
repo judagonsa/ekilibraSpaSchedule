@@ -23,6 +23,8 @@
 		918992D82C2B941400EFBFA1 /* TextFieldsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918992D72C2B941400EFBFA1 /* TextFieldsHelper.swift */; };
 		9190037B2C2E4ADE00C92B8B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190037A2C2E4ADE00C92B8B /* LoginView.swift */; };
 		9190037D2C2E4B7800C92B8B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190037C2C2E4B7800C92B8B /* LoginViewModel.swift */; };
+		919E9F602C40A98E000ABE14 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E9F5F2C40A98E000ABE14 /* KeychainManager.swift */; };
+		919E9F622C40B29B000ABE14 /* UserdefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E9F612C40B29B000ABE14 /* UserdefaultHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		918992D72C2B941400EFBFA1 /* TextFieldsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsHelper.swift; sourceTree = "<group>"; };
 		9190037A2C2E4ADE00C92B8B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9190037C2C2E4B7800C92B8B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		919E9F5F2C40A98E000ABE14 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		919E9F612C40B29B000ABE14 /* UserdefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		914BF6762C2B3D5300BDE4E0 /* SkilibraSpa */ = {
 			isa = PBXGroup;
 			children = (
+				919E9F5E2C40A97B000ABE14 /* Keychain */,
 				919003782C2E441600C92B8B /* Models */,
 				914BF6A72C2B416F00BDE4E0 /* Helpers */,
 				914BF6A22C2B3EC700BDE4E0 /* WelcomeView */,
@@ -166,6 +171,7 @@
 				914BF6AA2C2B46CA00BDE4E0 /* ButtonsHelper.swift */,
 				918992D72C2B941400EFBFA1 /* TextFieldsHelper.swift */,
 				915CB3732C33637F009036BA /* ImagesHelper.swift */,
+				919E9F612C40B29B000ABE14 /* UserdefaultHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -194,6 +200,14 @@
 				9190037A2C2E4ADE00C92B8B /* LoginView.swift */,
 			);
 			path = LoginView;
+			sourceTree = "<group>";
+		};
+		919E9F5E2C40A97B000ABE14 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				919E9F5F2C40A98E000ABE14 /* KeychainManager.swift */,
+			);
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,9 +344,11 @@
 				918992D22C2B8C8400EFBFA1 /* RegisterView.swift in Sources */,
 				918992D62C2B8CEF00EFBFA1 /* RegisterViewModel.swift in Sources */,
 				9190037B2C2E4ADE00C92B8B /* LoginView.swift in Sources */,
+				919E9F622C40B29B000ABE14 /* UserdefaultHelper.swift in Sources */,
 				918992D42C2B8CD600EFBFA1 /* UserModel.swift in Sources */,
 				914BF6AB2C2B46CA00BDE4E0 /* ButtonsHelper.swift in Sources */,
 				918992D82C2B941400EFBFA1 /* TextFieldsHelper.swift in Sources */,
+				919E9F602C40A98E000ABE14 /* KeychainManager.swift in Sources */,
 				915CB3742C33637F009036BA /* ImagesHelper.swift in Sources */,
 				914BF6A42C2B3EFD00BDE4E0 /* WelcomeView.swift in Sources */,
 				9190037D2C2E4B7800C92B8B /* LoginViewModel.swift in Sources */,

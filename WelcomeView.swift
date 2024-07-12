@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
+    @State var showRegister = false
+    @State var showLogin = false
+    
     var body: some View {
         VStack (spacing: 20) {
             
@@ -28,14 +32,14 @@ struct WelcomeView: View {
             
             HStack(spacing: 20) {
                 Button {
-                    //MARK: ir a la vista de registro
+                    showRegister.toggle()
                 }label: {
                     Text("Registrarme")
                         .overlayButton(borderColor: .green, lineWidth: 2)
                 }
                 
                 Button {
-                    //MARK: ir a la vista de iniciar sesión
+                    showLogin.toggle()
                 }label: {
                     Text("Iniciar sesión")
                         .clipShapeButton(backGroundColor: .green)
@@ -43,6 +47,13 @@ struct WelcomeView: View {
             }
             .padding(.horizontal, 20)
         }
+        .fullScreenCover(isPresented: $showLogin) {
+            LoginView()
+        }
+        .fullScreenCover(isPresented: $showRegister) {
+            RegisterView(isRegister: true)
+        }
+        
     }
 }
 
