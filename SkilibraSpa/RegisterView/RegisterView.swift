@@ -38,7 +38,7 @@ struct RegisterView: View {
             
             ScrollView {
                     
-                VStack (spacing: 5) {
+                VStack (alignment: .leading, spacing: 5) {
                     FormTextField(nameField: "Nombre", valueField: $viewModel.name)
                     if !viewModel.isValidName {
                         RequirementText(requirementText: "Mínimo 3 caracteres")
@@ -119,49 +119,56 @@ struct RegisterView: View {
                         if !viewModel.isValidConfirmPassword && viewModel.isValidPassword {
                             RequirementText(requirementText: "Las contraseñas no coinciden")
                         }
+                    }
+                    
+                    Text("Observaciones a tener en cuenta")
+                        .font(.system(size: 13, design: .rounded))
+                        .padding(.horizontal)
+                        .foregroundStyle(.gray)
+                        .padding(.top, 5)
+                    
+                    ZStack (alignment: .topLeading){
                         
-                        ZStack {
-                            TextEditor(text: $viewModel.observations)
-                                .textObservation()
-                                .onChange(of: viewModel.observations){ oldValue, newValue in
-                                    if oldValue.isEmpty || newValue.isEmpty {
-                                        viewModel.showObservationsInfo = true
-                                    }else {
-                                        viewModel.showObservationsInfo = false
-                                    }
-                                }
-                                .onTapGesture {
+                        TextEditor(text: $viewModel.observations)
+                            .textObservation()
+                            .onChange(of: viewModel.observations){ oldValue, newValue in
+                                if oldValue.isEmpty || newValue.isEmpty {
                                     viewModel.showObservationsInfo = true
-                                }
-                                .popover(isPresented: $viewModel.showObservationsInfo, arrowEdge: .bottom) {
-                                    Text("Información de las observaciones")
-                                        .textPopover()
-                                }
-                            
-                            VStack{
-                                Spacer()
-                                HStack {
-                                    Spacer()
-                                    Button {
-                                        viewModel.showObservationsInfo.toggle()
-                                    }label: {
-                                        Image(systemName: "questionmark.circle.fill")
-                                            .iconQuestion()
-                                            .padding(.trailing)
-                                            .padding(.all, 5)
-                                    }
+                                }else {
+                                    viewModel.showObservationsInfo = false
                                 }
                             }
-                            
+                            .onTapGesture {
+                                viewModel.showObservationsInfo = true
+                            }
+                            .popover(isPresented: $viewModel.showObservationsInfo, arrowEdge: .bottom) {
+                                Text("Información de las observaciones")
+                                    .textPopover()
+                            }
+                        
+                        VStack{
+                            Spacer()
+                            HStack {
+                                Spacer()
+                                Button {
+                                    viewModel.showObservationsInfo.toggle()
+                                }label: {
+                                    Image(systemName: "questionmark.circle.fill")
+                                        .iconQuestion()
+                                        .padding(.trailing)
+                                        .padding(.all, 5)
+                                }
+                            }
                         }
+                        
                     }
                     
                     if !isRegister {
-                        Button {
-                            showChangePassword.toggle()
-                        }label: {
-                            HStack{
-                                Spacer()
+                        HStack{
+                            Spacer()
+                            Button {
+                                showChangePassword.toggle()
+                            }label: {
                                 Text("Cambiar contraseña")
                                     .padding()
                                     .foregroundStyle(.red)
