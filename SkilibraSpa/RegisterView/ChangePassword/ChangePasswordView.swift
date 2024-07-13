@@ -39,7 +39,7 @@ struct ChangePasswordView: View {
                 isSecureField: $viewModel.showCurrentPassword
             )
             if !viewModel.isValidCurrentPassword {
-                RequirementText(requirementText: "Contraseña no valida, debe contener una mayúscula y un número (mayor a 6 carácteres)")
+                RequirementText(requirementText: "La contraseña ingresada es errónea.")
             }
             
             Divider()
@@ -50,7 +50,7 @@ struct ChangePasswordView: View {
                 isSecureField: $viewModel.showNewPassword
             )
             if !viewModel.isValidNewPassword {
-                RequirementText(requirementText: "Contraseña no valida, debe contener una mayúscula y un número (mayor a 6 carácteres)")
+                RequirementText(requirementText: "Contraseña no valida, debe contener una mayúscula y un número (mayor a 6 carácteres).")
             }
             
             FormSecureField(
@@ -59,15 +59,16 @@ struct ChangePasswordView: View {
                 isSecureField: $viewModel.showRepeatNewPassword
             )
             if !viewModel.isValidNewPassword && viewModel.isValidRepeatNewPassword {
-                RequirementText(requirementText: "Las contraseñas no coinciden")
+                RequirementText(requirementText: "Las contraseñas no coinciden.")
             }
             
             Spacer()
             
             Button {
                 if viewModel.validationField() {
-                   
-                    
+                    if KeychainManager.shared.updatePassword(viewModel.newPassword.data(using: .utf8)!) {
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }else {
                     viewModel.isRealTime = true
                 }

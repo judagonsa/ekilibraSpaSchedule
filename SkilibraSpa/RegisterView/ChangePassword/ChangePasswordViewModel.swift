@@ -10,16 +10,16 @@ import Combine
 
 class ChangePasswordViewModel: ObservableObject {
     @Published var currentPassword = ""
-    @Published var showCurrentPassword = false
+    @Published var showCurrentPassword = true
     @Published var isValidCurrentPassword = true
     
     @Published var newPassword = ""
-    @Published var showNewPassword = false
+    @Published var showNewPassword = true
     @Published var isValidNewPassword = true
     
     
     @Published var repeatNewPassword = ""
-    @Published var showRepeatNewPassword = false
+    @Published var showRepeatNewPassword = true
     @Published var isValidRepeatNewPassword = true
     
     
@@ -27,14 +27,6 @@ class ChangePasswordViewModel: ObservableObject {
     var cancellableSet: Set<AnyCancellable> = []
     
     init() {
-        $currentPassword
-            .receive(on: RunLoop.main)
-            .map { currentPassword in
-                return self.isRealTime ? self.isValidPasswordRegex(password: currentPassword) : true
-            }
-            .assign(to: \.isValidNewPassword, on: self)
-            .store(in: &cancellableSet)
-        
         $newPassword
             .receive(on: RunLoop.main)
             .map { newPassword in
@@ -50,6 +42,10 @@ class ChangePasswordViewModel: ObservableObject {
             }
             .assign(to: \.isValidRepeatNewPassword, on: self)
             .store(in: &cancellableSet)
+    }
+    
+    func isPasswordSave() -> Bool {
+        return currentPassword == KeychainManager.shared.getPassword()
     }
     
     func isValidPasswordRegex(password: String) -> Bool {
@@ -68,8 +64,10 @@ class ChangePasswordViewModel: ObservableObject {
     }
     
     func validationField() -> Bool {
+        isValidCurrentPassword = isPasswordSave()
+        isValidNewPassword = isValidPasswordRegex(password: newPassword)
+        isValidRepeatNewPassword = isSomePassword(confirmPassword: repeatNewPassword)
         
-        
-        return true
+        return isValidCurrentPassword && isValidNewPassword && isValidRepeatNewPassword
     }
 }

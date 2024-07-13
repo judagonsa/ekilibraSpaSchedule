@@ -34,7 +34,7 @@ class KeychainManager: KeychainManagerType {
         guard let passwordData = result as? Data, let password = String(data: passwordData, encoding: .utf8) else {
             return nil
         }
-        
+        print("password: \(password)")
          return password
     }
     
