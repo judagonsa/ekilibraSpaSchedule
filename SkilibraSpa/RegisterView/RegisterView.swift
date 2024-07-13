@@ -232,5 +232,5 @@ struct RegisterView: View {
 }
 
 #Preview {
-    RegisterView(isRegister: true)
+    RegisterView(isRegister: false)
 }

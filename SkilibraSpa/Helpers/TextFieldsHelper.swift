@@ -47,14 +47,13 @@ struct FormTextField: View {
     
     var body: some View {
         VStack (alignment: .leading, spacing: -2) {
-            HStack {
-                if !valueField.isEmpty {
-                    Text(nameField)
-                        .font(.system(size: 13, design: .rounded))
-                        .padding(.horizontal)
-                        .foregroundStyle(.gray)
-                }
-            } 
+            
+            if !valueField.isEmpty {
+                Text(nameField)
+                    .font(.system(size: 13, design: .rounded))
+                    .padding(.horizontal)
+                    .foregroundStyle(.gray)
+            }
             
             if isEmail {
                 
@@ -85,33 +84,42 @@ struct FormSecureField: View {
     @Binding var isSecureField: Bool
     
     var body: some View {
-        HStack {
-            if isSecureField {
-                SecureField(nameField, text: $valueField)
-                    .secureFormulary()
-            }else {
-                TextField(nameField, text: $valueField)
-                    .font(.system(size: 18, weight: .light, design: .rounded))
-                    .padding(10)
-                    .textInputAutocapitalization(.never)
+        VStack (alignment: .leading, spacing: -2){
+            if !valueField.isEmpty {
+                Text(nameField)
+                    .font(.system(size: 13, design: .rounded))
+                    .padding(.horizontal)
+                    .foregroundStyle(.gray)
             }
             
-            Button {
-                isSecureField.toggle()
-            }label: {
-                Image(systemName: isSecureField ? "eye.fill" : "eye.slash.fill")
-                    .iconGeneral()
-                    .padding(.trailing)
+            HStack {
+                if isSecureField {
+                    SecureField(nameField, text: $valueField)
+                        .secureFormulary()
+                }else {
+                    TextField(nameField, text: $valueField)
+                        .font(.system(size: 18, weight: .light, design: .rounded))
+                        .padding(10)
+                        .textInputAutocapitalization(.never)
+                }
+                
+                Button {
+                    isSecureField.toggle()
+                }label: {
+                    Image(systemName: isSecureField ? "eye.fill" : "eye.slash.fill")
+                        .iconGeneral()
+                        .padding(.trailing)
+                }
             }
+            .overlay {
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.gray, lineWidth: 0.5)
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 5)
+            .multilineTextAlignment(.leading)
+            .foregroundStyle(.black)
         }
-        .overlay {
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.gray, lineWidth: 0.5)
-        }
-        .padding(.horizontal)
-        .padding(.vertical, 5)
-        .multilineTextAlignment(.leading)
-        .foregroundStyle(.black)
     }
 }
 
