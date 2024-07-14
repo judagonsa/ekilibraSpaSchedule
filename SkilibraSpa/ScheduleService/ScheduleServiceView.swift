@@ -69,16 +69,25 @@ struct ScheduleServiceView: View {
             TextEditor(text: $viewModel.observations)
                 .textObservation()
             
-             Spacer()
+            Spacer()
             
+            
+            HStack (alignment: .center) {
+                Text(viewModel.warnings)
+                    .frame(maxWidth: .infinity)
+                    .font(.system(.callout, design: .rounded))
+                    .foregroundStyle(.red)
+            }
             Button {
-            print("validar campos seleccionados")
-                    
-                
+                if viewModel.validateInformation() {
+                    print("agendar cita")
+                }
             } label: {
                 Text("Agendar")
             }
             .buttonFooter(color: .red) //MARK: poner color principal de la app
+            
+            
         }
     }
 }
