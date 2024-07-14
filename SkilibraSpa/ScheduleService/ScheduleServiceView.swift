@@ -7,19 +7,11 @@
 
 import SwiftUI
 
-struct ScheduleService: View {
+struct ScheduleServiceView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var viewModel = ScheduleServiceViewModel()
     
-    var colors = ["Seleccionar", "Red", "Green", "Blue", "Tartan"]
-    @State private var selectedColor = ""
-    @State private var date = Date.now
-    
-    @State private var hour = Date.now
-    var places = ["Seleccionar", "Sogamoso", "Duitama", "Sogamoso"]
-    @State var selectedPlace = ""
-    
-    @State var observations = ""
     
     var body: some View {
         VStack (alignment: .leading) {
@@ -44,19 +36,19 @@ struct ScheduleService: View {
             
             
             Form {
-                Picker("Please choose a color", selection: $selectedColor) {
-                    ForEach(colors, id: \.self) {
+                Picker("Please choose a color", selection: $viewModel.selectedService) {
+                    ForEach(viewModel.services, id: \.self) {
                         Text($0)
                     }
                 }
                 .pickerStyle(.menu)
                 
-                DatePicker("Fecha", selection: $date, displayedComponents: .date)
+                DatePicker("Fecha", selection: $viewModel.date, displayedComponents: .date)
                 
-                DatePicker("Hora", selection: $date, displayedComponents: .hourAndMinute)
+                DatePicker("Hora", selection: $viewModel.hour, displayedComponents: .hourAndMinute)
                 
-                Picker("Lugar", selection: $selectedPlace) {
-                    ForEach(places, id: \.self) {
+                Picker("Lugar", selection: $viewModel.selectedPlace) {
+                    ForEach(viewModel.places, id: \.self) {
                         Text($0)
                             .foregroundStyle(.red)
                     }
@@ -74,19 +66,8 @@ struct ScheduleService: View {
                 .foregroundStyle(.gray)
                 .padding(.top, 5)
             
-            TextEditor(text: $observations)
+            TextEditor(text: $viewModel.observations)
                 .textObservation()
-                .onChange(of: observations){ oldValue, newValue in
-//                        if oldValue.isEmpty || newValue.isEmpty {
-//                            viewModel.showObservationsInfo = true
-//                        }else {
-//                            viewModel.showObservationsInfo = false
-//                        }
-                }
-                .onTapGesture {
-                    //viewModel.showObservationsInfo = true
-                }
-            
             
              Spacer()
             
@@ -103,5 +84,5 @@ struct ScheduleService: View {
 }
 
 #Preview {
-    ScheduleService()
+    ScheduleServiceView()
 }
