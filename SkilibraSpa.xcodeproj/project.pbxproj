@@ -30,6 +30,7 @@
 		919E9F652C40BBF5000ABE14 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E9F642C40BBF5000ABE14 /* HomeView.swift */; };
 		919E9F682C40BC34000ABE14 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E9F672C40BC34000ABE14 /* ChangePasswordView.swift */; };
 		91F5D25F2C441FF000FE2913 /* ScheduleServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5D25E2C441FF000FE2913 /* ScheduleServiceViewModel.swift */; };
+		91F5D2622C4439F400FE2913 /* BannersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5D2612C4439F400FE2913 /* BannersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		919E9F642C40BBF5000ABE14 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		919E9F672C40BC34000ABE14 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		91F5D25E2C441FF000FE2913 /* ScheduleServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleServiceViewModel.swift; sourceTree = "<group>"; };
+		91F5D2612C4439F400FE2913 /* BannersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 		919E9F632C40BBE6000ABE14 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				91F5D2602C4439E700FE2913 /* View */,
 				919E9F642C40BBF5000ABE14 /* HomeView.swift */,
 			);
 			path = Home;
@@ -239,6 +242,22 @@
 				914D3B152C42DD7100AB8685 /* ChangePasswordViewModel.swift */,
 			);
 			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		91F5D2602C4439E700FE2913 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91F5D2632C443A3A00FE2913 /* Banners */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		91F5D2632C443A3A00FE2913 /* Banners */ = {
+			isa = PBXGroup;
+			children = (
+				91F5D2612C4439F400FE2913 /* BannersView.swift */,
+			);
+			path = Banners;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91F5D2622C4439F400FE2913 /* BannersView.swift in Sources */,
 				914BF6A92C2B418B00BDE4E0 /* TextsHelper.swift in Sources */,
 				919E9F652C40BBF5000ABE14 /* HomeView.swift in Sources */,
 				918992D22C2B8C8400EFBFA1 /* RegisterView.swift in Sources */,
