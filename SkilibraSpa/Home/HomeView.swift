@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Binding var showMenu: Bool
+    
     var body: some View {
-        Text("Home view")
+        Button("Show Menu") {
+            showMenu.toggle()
+        }
     }
 }
 
 #Preview {
-    HomeView()
+    HomeView(showMenu: .constant(false))
 }

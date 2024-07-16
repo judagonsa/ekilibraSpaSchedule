@@ -13,6 +13,7 @@ struct WelcomeView: View {
     @State var showRegister = false
     @State var showLogin = false
     @State var showHome = false
+    @State var showSideMenu = false
     
     var body: some View {
         VStack (spacing: 20) {
@@ -56,7 +57,7 @@ struct WelcomeView: View {
             RegisterView(isRegister: true)
         }
         .fullScreenCover(isPresented: $showHome) {
-            HomeView()
+            SideMenuView()
         }
         .onAppear {
             if UserdefaultHelper.shared.getProfile() != nil {

@@ -14,6 +14,7 @@ struct RegisterView: View {
     @State var isRegister: Bool
     @State var showHome = false
     @State var showChangePassword = false
+    @State var showSideMenu = false
     
     var body: some View {
         VStack {
@@ -230,7 +231,7 @@ struct RegisterView: View {
             }
         }
         .fullScreenCover(isPresented: $showHome) {
-            HomeView()
+            SideMenuView()
         }
         .fullScreenCover(isPresented: $showChangePassword) {
             ChangePasswordView()
