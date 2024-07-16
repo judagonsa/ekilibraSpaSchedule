@@ -1,5 +1,5 @@
 //
-//  SideMenuView.swift
+//  SideMenu.swift
 //  SkilibraSpa
 //
 //  Created by Julian González on 16/07/24.
@@ -8,45 +8,166 @@
 import SwiftUI
 
 struct SideMenuView: View {
-    @State var showSideMenu = false
-    @State var offset: CGFloat = 0
-    @State var lastStoredOffset: CGFloat = 0
+    
+    @Binding var showMenu: Bool
+    @State var showProfile = false
+    @State var name = ""
+    @State var lastName = ""
+    @State var phoneNumber = ""
     
     var body: some View {
-        
-        let sideBarWidth = getRect().width - 90
-        
-        NavigationStack {
-            HStack(spacing: 0) {
-                
-                SideMenu(showMenu: $showSideMenu)
-                
-                HomeView(showMenu: $showSideMenu)
-                    .frame(width: getRect().width)
-                
-            }
-            .frame(width: getRect().width + sideBarWidth)
-            .offset(x: -sideBarWidth / 2)
-            .offset(x: offset)
-            .navigationBarTitleDisplayMode(.inline)
+        VStack(alignment: .leading) {
             
-        }
-        .animation(.easeOut, value: offset == 0)
-        .onChange(of: showSideMenu) { _, _ in
-            if showSideMenu && offset == 0 {
-                offset = sideBarWidth
-                lastStoredOffset = offset
+            HStack (alignment: .top ) {
+                VStack(alignment: .leading, spacing: 10) {
+                    
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 65, height: 65)
+                        .clipShape(.circle)
+                    
+                    Text("\(name) \(lastName)")
+                        .font(.title2.bold())
+                    
+                    Text(phoneNumber)
+                        .font(.callout)
+                    
+                }
+                Spacer()
+                
+                Button {
+                    showMenu.toggle()
+                } label: {
+                    Image(systemName: "xmark")
+                        .foregroundStyle(.black)
+                }
+            }
+            .padding(.horizontal)
+            .padding(.leading)
+            
+            Divider()
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
+                    VStack (alignment: .leading, spacing: 40) {
+                        TabButton(icon: "person.crop.circle", title: "Perfil") {
+                            if showMenu {
+                                withAnimation {
+                                    showMenu.toggle()
+                                    showProfile.toggle()
+                                }
+                            }
+                        }
+                        
+                        TabButton(icon: "calendar", title: "Mis citas") {
+                            
+                        }
+                        
+                        TabButton(icon: "gearshape.fill", title: "Configuración") {
+                            
+                        }
+                        
+                    }
+                    .padding()
+                    .padding(.leading)
+                    .padding(.top, 20)
+                    
+                    Divider()
+                    
+                    TabButton(icon: "info.circle", title: "Acerca de") {
+                        
+                    }
+                    .padding()
+                    .padding(.leading)
+                    
+                    Divider()
+                    
+                    VStack (alignment: .leading, spacing: 40) {
+                        TabButton(icon: "person.crop.circle", title: "Política y privacidad"){
+                            
+                        }
+                        TabButton(icon: "lock.shield", title: "Tratamiendo de datos"){
+                            
+                        }
+                        
+                    }
+                    .padding()
+                    .padding(.leading)
+                    
+                    Divider()
+                    
+                    TabButton(icon: "questionmark.circle", title: "Centro de ayuda"){
+                        
+                    }
+                    .padding()
+                    .padding(.leading)
+                }
+                
             }
             
-            if !showSideMenu && offset == sideBarWidth {
-                offset = 0
-                lastStoredOffset = 0
+            Divider()
+            VStack {
+                Text("Ekilibra Spa")
+                    .font(.callout)
+                
+                Text("Version 1.0.0")
+                    .font(.caption2)
+            }
+            .opacity(0.5)
+            .padding(.top, 10)
+            .frame(maxWidth: .infinity)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(width: getRect().width - 90)
+        .frame(maxHeight:  .infinity)
+        .background(
+            Color.primary
+                .opacity(0.04)
+                .ignoresSafeArea(.container, edges: .vertical)
+        )
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .fullScreenCover(isPresented: $showProfile, content: { RegisterView(isRegister: false) })
+        .onAppear {
+            if let profile = UserdefaultHelper.shared.getProfile() {
+                name = profile.name
+                lastName = profile.lastName
+                //viewModel.age = profile.age
+                phoneNumber = profile.phoneNumber
+                //viewModel.gender = profile.gender
+                //viewModel.observations = profile.observations
             }
         }
-        
+    }
+    
+    
+    @ViewBuilder
+    func TabButton(icon: String, title: String, completion: @escaping () -> ()) -> some View {
+        Button {
+            completion()
+        }label: {
+            HStack(spacing: 15) {
+                Image(systemName: icon)
+                    .resizable()
+                    .renderingMode(.template)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 20, height: 20)
+                
+                Text(title)
+            }
+            .foregroundStyle(.black)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+}
+
+extension View {
+    func getRect() -> CGRect {
+        return UIScreen.main.bounds
     }
 }
 
 #Preview {
-    SideMenuView()
+    SideMenuView(showMenu: .constant(true))
 }
+

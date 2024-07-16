@@ -231,7 +231,7 @@ struct RegisterView: View {
             }
         }
         .fullScreenCover(isPresented: $showHome) {
-            SideMenuView()
+            SideMenuHome()
         }
         .fullScreenCover(isPresented: $showChangePassword) {
             ChangePasswordView()

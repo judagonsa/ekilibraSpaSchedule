@@ -57,7 +57,7 @@ struct WelcomeView: View {
             RegisterView(isRegister: true)
         }
         .fullScreenCover(isPresented: $showHome) {
-            SideMenuView()
+            SideMenuHome()
         }
         .onAppear {
             if UserdefaultHelper.shared.getProfile() != nil {
