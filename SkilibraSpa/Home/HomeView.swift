@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             BannersView()
-            BannerCircleView()
+            CircleBannersView()
             
             Spacer()
             Button("Show Menu") {

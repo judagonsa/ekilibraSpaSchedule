@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BannerCircleView: View {
+struct CircleBannersView: View {
     
     var colors: [UIColor] = [ .red, .blue, .yellow, .black, .orange]
     var place: [String] = [ "Día de la madre", "Tunja", "Duitama", "día del padre", "Sogamoso"]
@@ -54,5 +54,5 @@ struct BannerCircleView: View {
 }
 
 #Preview {
-    BannerCircleView()
+    CircleBannersView()
 }
