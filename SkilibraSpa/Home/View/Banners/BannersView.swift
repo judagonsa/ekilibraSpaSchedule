@@ -49,6 +49,7 @@ struct BannersView: View {
             })
             
         }
+        .frame(height: 180)
     }
 }
 

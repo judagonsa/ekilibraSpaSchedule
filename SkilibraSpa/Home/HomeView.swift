@@ -11,8 +11,14 @@ struct HomeView: View {
     @Binding var showMenu: Bool
     
     var body: some View {
-        Button("Show Menu") {
-            showMenu.toggle()
+        VStack {
+            BannersView()
+            BannerCircleView()
+            
+            Spacer()
+            Button("Show Menu") {
+                showMenu.toggle()
+            }
         }
     }
 }

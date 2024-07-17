@@ -66,6 +66,14 @@ extension Text {
             .padding()
             .presentationCompactAdaptation(.none)
     }
+    
+    func textCirceBanners() -> some View {
+        return self
+            .font(.system(size: 15, weight: .light, design: .rounded))
+            .multilineTextAlignment(.center)
+            .lineLimit(2)
+            .frame(width: 100)
+    }
 }
 
 extension TextEditor {
