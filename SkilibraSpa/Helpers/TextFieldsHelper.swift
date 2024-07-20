@@ -53,6 +53,7 @@ struct FormTextField: View {
                     .font(.system(size: 13, design: .rounded))
                     .padding(.horizontal)
                     .foregroundStyle(.gray)
+                    .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.5)))
             }
             
             if isEmail {
@@ -90,6 +91,7 @@ struct FormSecureField: View {
                     .font(.system(size: 13, design: .rounded))
                     .padding(.horizontal)
                     .foregroundStyle(.gray)
+                    .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.5)))
             }
             
             HStack {
