@@ -7,9 +7,11 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class RegisterViewModel: ObservableObject {
     @Published var isRegister = false
+    @Published var photo: Data?
     
     @Published var name = ""
     @Published var isValidName = true

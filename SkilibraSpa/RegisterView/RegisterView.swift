@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct RegisterView: View {
     
@@ -15,6 +16,7 @@ struct RegisterView: View {
     @State var showHome = false
     @State var showChangePassword = false
     @State var showSideMenu = false
+    @State var photoPickerItem: PhotosPickerItem?
     
     var body: some View {
         VStack {
@@ -38,8 +40,29 @@ struct RegisterView: View {
             }
             
             ScrollView {
+                if !isRegister {
+                    HStack {
+                        PhotosPicker(selection: $photoPickerItem, matching: .images) {
+                            if let dataImage = viewModel.photo, let image = UIImage(data: dataImage) {
+                                Image(uiImage: image)
+                                    .iconProfile()
+                            }else {
+                                Image(systemName: "person.circle.fill")
+                                    .iconProfile()
+                            }
+                        }
+                    }
+                    .onChange(of: photoPickerItem) { _, _ in
+                        Task {
+                            if let photoPickerItem, let data = try? await photoPickerItem.loadTransferable(type: Data.self) {
+                                viewModel.photo = data
+                            }
+                        }
+                    }
+                }
                     
                 VStack (alignment: .leading, spacing: 5) {
+                    
                     FormTextField(nameField: "Nombre", valueField: $viewModel.name)
                     if !viewModel.isValidName {
                         RequirementText(requirementText: "Mínimo 3 caracteres")
@@ -190,14 +213,18 @@ struct RegisterView: View {
                         phoneNumber: viewModel.phoneNumber,
                         age: viewModel.age,
                         gender: viewModel.gender,
-                        observations: viewModel.observations
+                        observations: viewModel.observations,
+                        photo: viewModel.photo
                     )
-                    print(profile.printData())
                     
                     if isRegister {
                         if UserdefaultHelper.shared.saveProfile(profile), KeychainManager.shared.savePassword(viewModel.password) {
                             
                             showHome.toggle()
+                        }
+                    }else {
+                        if UserdefaultHelper.shared.saveProfile(profile) {
+                            print("Mostrar un toast de información guardada")
                         }
                     }
                     
@@ -228,6 +255,7 @@ struct RegisterView: View {
                 viewModel.phoneNumber = profile.phoneNumber
                 viewModel.gender = profile.gender
                 viewModel.observations = profile.observations
+                viewModel.photo = profile.photo
             }
         }
         .fullScreenCover(isPresented: $showHome) {

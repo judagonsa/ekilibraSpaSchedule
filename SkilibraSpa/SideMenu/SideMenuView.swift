@@ -14,6 +14,7 @@ struct SideMenuView: View {
     @State var name = ""
     @State var lastName = ""
     @State var phoneNumber = ""
+    @State var photo: Data?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,11 +22,13 @@ struct SideMenuView: View {
             HStack (alignment: .top ) {
                 VStack(alignment: .leading, spacing: 10) {
                     
-                    Image(systemName: "person.crop.circle")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 65, height: 65)
-                        .clipShape(.circle)
+                    if let dataImage = photo, let image = UIImage(data: dataImage) {
+                        Image(uiImage: image)
+                            .iconProfileMenu()
+                    }else {
+                        Image(systemName: "person.crop.circle")
+                            .iconProfileMenu()
+                    }
                     
                     Text("\(name) \(lastName)")
                         .font(.title2.bold())
@@ -128,14 +131,17 @@ struct SideMenuView: View {
         )
         .frame(maxWidth: .infinity, alignment: .leading)
         .fullScreenCover(isPresented: $showProfile, content: { RegisterView(isRegister: false) })
-        .onAppear {
-            if let profile = UserdefaultHelper.shared.getProfile() {
-                name = profile.name
-                lastName = profile.lastName
-                //viewModel.age = profile.age
-                phoneNumber = profile.phoneNumber
-                //viewModel.gender = profile.gender
-                //viewModel.observations = profile.observations
+        .onChange(of: showMenu) { _, value in
+            if value {
+                if let profile = UserdefaultHelper.shared.getProfile() {
+                    name = profile.name
+                    lastName = profile.lastName
+                    //viewModel.age = profile.age
+                    phoneNumber = profile.phoneNumber
+                    //viewModel.gender = profile.gender
+                    //viewModel.observations = profile.observations
+                    photo = profile.photo
+                }
             }
         }
     }
