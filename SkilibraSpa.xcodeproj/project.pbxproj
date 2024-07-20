@@ -29,6 +29,8 @@
 		919E9F622C40B29B000ABE14 /* UserdefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E9F612C40B29B000ABE14 /* UserdefaultHelper.swift */; };
 		919E9F652C40BBF5000ABE14 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E9F642C40BBF5000ABE14 /* HomeView.swift */; };
 		919E9F682C40BC34000ABE14 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919E9F672C40BC34000ABE14 /* ChangePasswordView.swift */; };
+		91C53FE22C4C62630094DCFB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 91C53FE12C4C62630094DCFB /* Lottie */; };
+		91C53FE82C4C65480094DCFB /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C53FE72C4C65480094DCFB /* SplashScreenView.swift */; };
 		91C6297B2C47387B00E4FBDB /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C6297A2C47387B00E4FBDB /* SideMenuView.swift */; };
 		91C6297D2C473B4300E4FBDB /* SideMenuHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C6297C2C473B4300E4FBDB /* SideMenuHome.swift */; };
 		91C6297F2C4740E700E4FBDB /* CircleBannersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C6297E2C4740E700E4FBDB /* CircleBannersView.swift */; };
@@ -80,6 +82,7 @@
 		919E9F612C40B29B000ABE14 /* UserdefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultHelper.swift; sourceTree = "<group>"; };
 		919E9F642C40BBF5000ABE14 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		919E9F672C40BC34000ABE14 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		91C53FE72C4C65480094DCFB /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		91C6297A2C47387B00E4FBDB /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		91C6297C2C473B4300E4FBDB /* SideMenuHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHome.swift; sourceTree = "<group>"; };
 		91C6297E2C4740E700E4FBDB /* CircleBannersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBannersView.swift; sourceTree = "<group>"; };
@@ -92,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C53FE22C4C62630094DCFB /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +147,9 @@
 				919E9F632C40BBE6000ABE14 /* Home */,
 				91C629792C47386E00E4FBDB /* SideMenu */,
 				914D3B172C42F4D300AB8685 /* ScheduleService */,
+				91C53FE62C4C65380094DCFB /* SplashScreen */,
 				914BF6772C2B3D5300BDE4E0 /* SkilibraSpaApp.swift */,
+				91C53FE32C4C62F70094DCFB /* Resources */,
 				914BF67B2C2B3D5400BDE4E0 /* Assets.xcassets */,
 				914BF67D2C2B3D5400BDE4E0 /* SkilibraSpa.entitlements */,
 				914BF67E2C2B3D5400BDE4E0 /* Preview Content */,
@@ -251,6 +257,21 @@
 			path = ChangePassword;
 			sourceTree = "<group>";
 		};
+		91C53FE32C4C62F70094DCFB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		91C53FE62C4C65380094DCFB /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				91C53FE72C4C65480094DCFB /* SplashScreenView.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
 		91C629792C47386E00E4FBDB /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +314,9 @@
 			dependencies = (
 			);
 			name = SkilibraSpa;
+			packageProductDependencies = (
+				91C53FE12C4C62630094DCFB /* Lottie */,
+			);
 			productName = SkilibraSpa;
 			productReference = 914BF6742C2B3D5300BDE4E0 /* SkilibraSpa.app */;
 			productType = "com.apple.product-type.application";
@@ -365,6 +389,9 @@
 				Base,
 			);
 			mainGroup = 914BF66B2C2B3D5300BDE4E0;
+			packageReferences = (
+				91C53FE02C4C62630094DCFB /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 914BF6752C2B3D5300BDE4E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -414,6 +441,7 @@
 				918992D62C2B8CEF00EFBFA1 /* RegisterViewModel.swift in Sources */,
 				9190037B2C2E4ADE00C92B8B /* LoginView.swift in Sources */,
 				91F5D25F2C441FF000FE2913 /* ScheduleServiceViewModel.swift in Sources */,
+				91C53FE82C4C65480094DCFB /* SplashScreenView.swift in Sources */,
 				91C6297B2C47387B00E4FBDB /* SideMenuView.swift in Sources */,
 				919E9F622C40B29B000ABE14 /* UserdefaultHelper.swift in Sources */,
 				918992D42C2B8CD600EFBFA1 /* UserModel.swift in Sources */,
@@ -584,6 +612,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = SkilibraSpa/SkilibraSpa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -598,6 +627,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -622,6 +652,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = SkilibraSpa/SkilibraSpa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -636,6 +667,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -785,6 +817,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		91C53FE02C4C62630094DCFB /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		91C53FE12C4C62630094DCFB /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91C53FE02C4C62630094DCFB /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 914BF66C2C2B3D5300BDE4E0 /* Project object */;
 }

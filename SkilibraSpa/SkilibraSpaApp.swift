@@ -11,7 +11,7 @@ import SwiftUI
 struct SkilibraSpaApp: App {
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
+            SplashScreenView()
         }
     }
 }
