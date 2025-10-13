@@ -11,7 +11,7 @@ import PhotosUI
 struct RegisterView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel = RegisterViewModel()
+    @StateObject var viewModel = RegisterViewModel()
     @State var isRegister: Bool
     @State var showHome = false
     @State var showChangePassword = false
@@ -218,6 +218,7 @@ struct RegisterView: View {
                     )
                     
                     if isRegister {
+                        //TODO: para esto al viewmodel
                         if UserdefaultHelper.shared.saveProfile(profile), KeychainManager.shared.savePassword(viewModel.password) {
                             
                             showHome.toggle()

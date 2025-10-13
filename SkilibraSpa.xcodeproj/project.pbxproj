@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		914BF6782C2B3D5300BDE4E0 /* SkilibraSpaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BF6772C2B3D5300BDE4E0 /* SkilibraSpaApp.swift */; };
-		914BF67C2C2B3D5400BDE4E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 914BF67B2C2B3D5400BDE4E0 /* Assets.xcassets */; };
 		914BF6802C2B3D5400BDE4E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 914BF67F2C2B3D5400BDE4E0 /* Preview Assets.xcassets */; };
 		914BF68A2C2B3D5400BDE4E0 /* SkilibraSpaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BF6892C2B3D5400BDE4E0 /* SkilibraSpaTests.swift */; };
 		914BF6942C2B3D5400BDE4E0 /* SkilibraSpaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BF6932C2B3D5400BDE4E0 /* SkilibraSpaUITests.swift */; };
 		914BF6962C2B3D5400BDE4E0 /* SkilibraSpaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BF6952C2B3D5400BDE4E0 /* SkilibraSpaUITestsLaunchTests.swift */; };
-		914BF6A42C2B3EFD00BDE4E0 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BF6A32C2B3EFD00BDE4E0 /* WelcomeView.swift */; };
 		914BF6A92C2B418B00BDE4E0 /* TextsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BF6A82C2B418B00BDE4E0 /* TextsHelper.swift */; };
 		914BF6AB2C2B46CA00BDE4E0 /* ButtonsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BF6AA2C2B46CA00BDE4E0 /* ButtonsHelper.swift */; };
 		914D3B162C42DD7100AB8685 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914D3B152C42DD7100AB8685 /* ChangePasswordViewModel.swift */; };
@@ -34,6 +32,8 @@
 		91C6297B2C47387B00E4FBDB /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C6297A2C47387B00E4FBDB /* SideMenuView.swift */; };
 		91C6297D2C473B4300E4FBDB /* SideMenuHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C6297C2C473B4300E4FBDB /* SideMenuHome.swift */; };
 		91C6297F2C4740E700E4FBDB /* CircleBannersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C6297E2C4740E700E4FBDB /* CircleBannersView.swift */; };
+		91E3DDCC2E8DFD5A0040977C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E3DDCB2E8DFD5A0040977C /* Assets.xcassets */; };
+		91E3DDD22E8DFFE70040977C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E3DDD12E8DFFE70040977C /* WelcomeView.swift */; };
 		91F5D25F2C441FF000FE2913 /* ScheduleServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5D25E2C441FF000FE2913 /* ScheduleServiceViewModel.swift */; };
 		91F5D2622C4439F400FE2913 /* BannersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5D2612C4439F400FE2913 /* BannersView.swift */; };
 /* End PBXBuildFile section */
@@ -58,7 +58,6 @@
 /* Begin PBXFileReference section */
 		914BF6742C2B3D5300BDE4E0 /* SkilibraSpa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkilibraSpa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		914BF6772C2B3D5300BDE4E0 /* SkilibraSpaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkilibraSpaApp.swift; sourceTree = "<group>"; };
-		914BF67B2C2B3D5400BDE4E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		914BF67D2C2B3D5400BDE4E0 /* SkilibraSpa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkilibraSpa.entitlements; sourceTree = "<group>"; };
 		914BF67F2C2B3D5400BDE4E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		914BF6852C2B3D5400BDE4E0 /* SkilibraSpaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkilibraSpaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +65,6 @@
 		914BF68F2C2B3D5400BDE4E0 /* SkilibraSpaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkilibraSpaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		914BF6932C2B3D5400BDE4E0 /* SkilibraSpaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkilibraSpaUITests.swift; sourceTree = "<group>"; };
 		914BF6952C2B3D5400BDE4E0 /* SkilibraSpaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkilibraSpaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		914BF6A32C2B3EFD00BDE4E0 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = SOURCE_ROOT; };
 		914BF6A82C2B418B00BDE4E0 /* TextsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextsHelper.swift; sourceTree = "<group>"; };
 		914BF6AA2C2B46CA00BDE4E0 /* ButtonsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsHelper.swift; sourceTree = "<group>"; };
 		914D3B152C42DD7100AB8685 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +84,8 @@
 		91C6297A2C47387B00E4FBDB /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		91C6297C2C473B4300E4FBDB /* SideMenuHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHome.swift; sourceTree = "<group>"; };
 		91C6297E2C4740E700E4FBDB /* CircleBannersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBannersView.swift; sourceTree = "<group>"; };
+		91E3DDCB2E8DFD5A0040977C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91E3DDD12E8DFFE70040977C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeView.swift; path = SkilibraSpa/Features/WelcomeView.swift; sourceTree = SOURCE_ROOT; };
 		91F5D25E2C441FF000FE2913 /* ScheduleServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleServiceViewModel.swift; sourceTree = "<group>"; };
 		91F5D2612C4439F400FE2913 /* BannersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,18 +139,11 @@
 		914BF6762C2B3D5300BDE4E0 /* SkilibraSpa */ = {
 			isa = PBXGroup;
 			children = (
-				919E9F5E2C40A97B000ABE14 /* Keychain */,
-				914BF6A72C2B416F00BDE4E0 /* Helpers */,
-				914BF6A22C2B3EC700BDE4E0 /* WelcomeView */,
-				918992D02C2B8C7400EFBFA1 /* RegisterView */,
-				919003792C2E4AD000C92B8B /* LoginView */,
-				919E9F632C40BBE6000ABE14 /* Home */,
-				91C629792C47386E00E4FBDB /* SideMenu */,
-				914D3B172C42F4D300AB8685 /* ScheduleService */,
-				91C53FE62C4C65380094DCFB /* SplashScreen */,
-				914BF6772C2B3D5300BDE4E0 /* SkilibraSpaApp.swift */,
-				91C53FE32C4C62F70094DCFB /* Resources */,
-				914BF67B2C2B3D5400BDE4E0 /* Assets.xcassets */,
+				91E3DDD02E8DFFB80040977C /* Features */,
+				91E3DDCF2E8DFF8F0040977C /* Shared */,
+				91E3DDCE2E8DFF5D0040977C /* Core */,
+				91E3DDCD2E8DFF280040977C /* App */,
+				91E3DDCB2E8DFD5A0040977C /* Assets.xcassets */,
 				914BF67D2C2B3D5400BDE4E0 /* SkilibraSpa.entitlements */,
 				914BF67E2C2B3D5400BDE4E0 /* Preview Content */,
 			);
@@ -185,21 +178,9 @@
 		914BF6A22C2B3EC700BDE4E0 /* WelcomeView */ = {
 			isa = PBXGroup;
 			children = (
-				914BF6A32C2B3EFD00BDE4E0 /* WelcomeView.swift */,
+				91E3DDD12E8DFFE70040977C /* WelcomeView.swift */,
 			);
 			path = WelcomeView;
-			sourceTree = "<group>";
-		};
-		914BF6A72C2B416F00BDE4E0 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				914BF6A82C2B418B00BDE4E0 /* TextsHelper.swift */,
-				914BF6AA2C2B46CA00BDE4E0 /* ButtonsHelper.swift */,
-				918992D72C2B941400EFBFA1 /* TextFieldsHelper.swift */,
-				915CB3732C33637F009036BA /* ImagesHelper.swift */,
-				919E9F612C40B29B000ABE14 /* UserdefaultHelper.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		914D3B172C42F4D300AB8685 /* ScheduleService */ = {
@@ -257,21 +238,6 @@
 			path = ChangePassword;
 			sourceTree = "<group>";
 		};
-		91C53FE32C4C62F70094DCFB /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		91C53FE62C4C65380094DCFB /* SplashScreen */ = {
-			isa = PBXGroup;
-			children = (
-				91C53FE72C4C65480094DCFB /* SplashScreenView.swift */,
-			);
-			path = SplashScreen;
-			sourceTree = "<group>";
-		};
 		91C629792C47386E00E4FBDB /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +245,48 @@
 				91C6297C2C473B4300E4FBDB /* SideMenuHome.swift */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		91E3DDCD2E8DFF280040977C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				914BF6772C2B3D5300BDE4E0 /* SkilibraSpaApp.swift */,
+				91C53FE72C4C65480094DCFB /* SplashScreenView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		91E3DDCE2E8DFF5D0040977C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				919E9F5E2C40A97B000ABE14 /* Keychain */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		91E3DDCF2E8DFF8F0040977C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				914BF6A82C2B418B00BDE4E0 /* TextsHelper.swift */,
+				914BF6AA2C2B46CA00BDE4E0 /* ButtonsHelper.swift */,
+				918992D72C2B941400EFBFA1 /* TextFieldsHelper.swift */,
+				915CB3732C33637F009036BA /* ImagesHelper.swift */,
+				919E9F612C40B29B000ABE14 /* UserdefaultHelper.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		91E3DDD02E8DFFB80040977C /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				914BF6A22C2B3EC700BDE4E0 /* WelcomeView */,
+				918992D02C2B8C7400EFBFA1 /* RegisterView */,
+				919003792C2E4AD000C92B8B /* LoginView */,
+				919E9F632C40BBE6000ABE14 /* Home */,
+				91C629792C47386E00E4FBDB /* SideMenu */,
+				914D3B172C42F4D300AB8685 /* ScheduleService */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 		91F5D2602C4439E700FE2913 /* View */ = {
@@ -365,7 +373,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					914BF6732C2B3D5300BDE4E0 = {
 						CreatedOnToolsVersion = 15.4;
@@ -409,7 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				914BF6802C2B3D5400BDE4E0 /* Preview Assets.xcassets in Resources */,
-				914BF67C2C2B3D5400BDE4E0 /* Assets.xcassets in Resources */,
+				91E3DDCC2E8DFD5A0040977C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +452,7 @@
 				91C53FE82C4C65480094DCFB /* SplashScreenView.swift in Sources */,
 				91C6297B2C47387B00E4FBDB /* SideMenuView.swift in Sources */,
 				919E9F622C40B29B000ABE14 /* UserdefaultHelper.swift in Sources */,
+				91E3DDD22E8DFFE70040977C /* WelcomeView.swift in Sources */,
 				918992D42C2B8CD600EFBFA1 /* UserModel.swift in Sources */,
 				91C6297F2C4740E700E4FBDB /* CircleBannersView.swift in Sources */,
 				919E9F682C40BC34000ABE14 /* ChangePasswordView.swift in Sources */,
@@ -453,7 +462,6 @@
 				915CB3742C33637F009036BA /* ImagesHelper.swift in Sources */,
 				91C6297D2C473B4300E4FBDB /* SideMenuHome.swift in Sources */,
 				914D3B192C42F4E800AB8685 /* ScheduleServiceView.swift in Sources */,
-				914BF6A42C2B3EFD00BDE4E0 /* WelcomeView.swift in Sources */,
 				914D3B162C42DD7100AB8685 /* ChangePasswordViewModel.swift in Sources */,
 				9190037D2C2E4B7800C92B8B /* LoginViewModel.swift in Sources */,
 				914BF6782C2B3D5300BDE4E0 /* SkilibraSpaApp.swift in Sources */,
@@ -527,7 +535,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = W354C4N4JZ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -549,6 +559,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -588,7 +599,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = W354C4N4JZ;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -603,6 +616,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -616,10 +630,12 @@
 				CODE_SIGN_ENTITLEMENTS = SkilibraSpa/SkilibraSpa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SkilibraSpa/Preview Content\"";
-				DEVELOPMENT_TEAM = W354C4N4JZ;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -656,10 +672,12 @@
 				CODE_SIGN_ENTITLEMENTS = SkilibraSpa/SkilibraSpa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SkilibraSpa/Preview Content\"";
-				DEVELOPMENT_TEAM = W354C4N4JZ;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -690,11 +708,10 @@
 		914BF69D2C2B3D5400BDE4E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W354C4N4JZ;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -713,11 +730,10 @@
 		914BF69E2C2B3D5400BDE4E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W354C4N4JZ;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -736,10 +752,9 @@
 		914BF6A02C2B3D5400BDE4E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W354C4N4JZ;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -758,10 +773,9 @@
 		914BF6A12C2B3D5400BDE4E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W354C4N4JZ;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
