@@ -1,9 +1,9 @@
-//
-//  RegisterView.swift
-//  SkilibraSpa
-//
-//  Created by Julian González on 25/06/24.
-//
+    //
+    //  RegisterView.swift
+    //  SkilibraSpa
+    //
+    //  Created by Julian González on 25/06/24.
+    //
 
 import SwiftUI
 import PhotosUI
@@ -60,7 +60,7 @@ struct RegisterView: View {
                         }
                     }
                 }
-                    
+                
                 VStack (alignment: .leading, spacing: 5) {
                     
                     FormTextField(nameField: "Nombre", valueField: $viewModel.name)
@@ -76,10 +76,20 @@ struct RegisterView: View {
                     FormTextField(nameField: "Edad", valueField: $viewModel.age)
                     
                     if !viewModel.isValidAge {
-                        RequirementText(
-                            iconName: "calendar.badge.clock",
-                            requirementText: viewModel.age == "" ? "Favor ingresa una edad" : Int(viewModel.age)! < 15 ? "Debes ingresar una edad mayor a 15 años" : Int(viewModel.age)! >= 80 ? "Debes ingresar una edad menor a 80 años" : ""
-                        )
+                        if let age = Int(viewModel.age) {
+                            RequirementText(
+                                iconName: "calendar.badge.clock",
+                                requirementText: viewModel.age == ""
+                                ? "Favor ingresa una edad"
+                                : (age < 15
+                                   ? "Debes ingresar una edad mayor a 15 años"
+                                   : (age >= 80
+                                      ? "Debes ingresar una edad menor a 80 años"
+                                      : ""
+                                     )
+                                  )
+                            )
+                        }
                     }
                     ZStack {
                         FormTextField(nameField: "Número de teléfono", valueField: $viewModel.phoneNumber)
@@ -218,7 +228,7 @@ struct RegisterView: View {
                     )
                     
                     if isRegister {
-                        //TODO: para esto al viewmodel
+                            //TODO: para esto al viewmodel
                         if UserdefaultHelper.shared.saveProfile(profile), KeychainManager.shared.savePassword(viewModel.password) {
                             
                             showHome.toggle()

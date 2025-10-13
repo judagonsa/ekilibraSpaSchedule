@@ -125,7 +125,9 @@ class RegisterViewModel: ObservableObject {
     func validationField() -> Bool {
         isValidName = name.count > 3
         isValidLastName = lastName.count > 3
-        isValidAge = age != "" ? ((Int(age)! >= 15 && Int(age)! < 80) ? true : false) : false
+        if age != "", let ageInt = Int(age) {
+            isValidAge = (ageInt >= 15 && ageInt < 80) ? true : false
+        }
         isValidPhoneNumber = phoneNumber.count == 10
         isValidGender = !gender.isEmpty
         

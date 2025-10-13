@@ -66,7 +66,8 @@ struct ChangePasswordView: View {
             
             Button {
                 if viewModel.validationField() {
-                    if KeychainManager.shared.updatePassword(viewModel.newPassword.data(using: .utf8)!) {
+                    if  let data = viewModel.newPassword.data(using: .utf8),
+                            KeychainManager.shared.updatePassword(data) {
                         presentationMode.wrappedValue.dismiss()
                     }
                 }else {
