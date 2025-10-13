@@ -85,7 +85,7 @@
 		91C6297C2C473B4300E4FBDB /* SideMenuHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHome.swift; sourceTree = "<group>"; };
 		91C6297E2C4740E700E4FBDB /* CircleBannersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBannersView.swift; sourceTree = "<group>"; };
 		91E3DDCB2E8DFD5A0040977C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		91E3DDD12E8DFFE70040977C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeView.swift; path = SkilibraSpa/Features/WelcomeView.swift; sourceTree = SOURCE_ROOT; };
+		91E3DDD12E8DFFE70040977C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		91F5D25E2C441FF000FE2913 /* ScheduleServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleServiceViewModel.swift; sourceTree = "<group>"; };
 		91F5D2612C4439F400FE2913 /* BannersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,14 +175,6 @@
 			path = SkilibraSpaUITests;
 			sourceTree = "<group>";
 		};
-		914BF6A22C2B3EC700BDE4E0 /* WelcomeView */ = {
-			isa = PBXGroup;
-			children = (
-				91E3DDD12E8DFFE70040977C /* WelcomeView.swift */,
-			);
-			path = WelcomeView;
-			sourceTree = "<group>";
-		};
 		914D3B172C42F4D300AB8685 /* ScheduleService */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +184,7 @@
 			path = ScheduleService;
 			sourceTree = "<group>";
 		};
-		918992D02C2B8C7400EFBFA1 /* RegisterView */ = {
+		918992D02C2B8C7400EFBFA1 /* Register */ = {
 			isa = PBXGroup;
 			children = (
 				919E9F662C40BC23000ABE14 /* ChangePassword */,
@@ -200,16 +192,16 @@
 				918992D52C2B8CEF00EFBFA1 /* RegisterViewModel.swift */,
 				918992D12C2B8C8400EFBFA1 /* RegisterView.swift */,
 			);
-			path = RegisterView;
+			path = Register;
 			sourceTree = "<group>";
 		};
-		919003792C2E4AD000C92B8B /* LoginView */ = {
+		919003792C2E4AD000C92B8B /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				9190037C2C2E4B7800C92B8B /* LoginViewModel.swift */,
 				9190037A2C2E4ADE00C92B8B /* LoginView.swift */,
 			);
-			path = LoginView;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		919E9F5E2C40A97B000ABE14 /* Keychain */ = {
@@ -247,6 +239,14 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		91CB947A2E9DBBAD003C2C7F /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				91E3DDD12E8DFFE70040977C /* WelcomeView.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		91E3DDCD2E8DFF280040977C /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,9 +279,9 @@
 		91E3DDD02E8DFFB80040977C /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				914BF6A22C2B3EC700BDE4E0 /* WelcomeView */,
-				918992D02C2B8C7400EFBFA1 /* RegisterView */,
-				919003792C2E4AD000C92B8B /* LoginView */,
+				91CB947A2E9DBBAD003C2C7F /* Welcome */,
+				918992D02C2B8C7400EFBFA1 /* Register */,
+				919003792C2E4AD000C92B8B /* Login */,
 				919E9F632C40BBE6000ABE14 /* Home */,
 				91C629792C47386E00E4FBDB /* SideMenu */,
 				914D3B172C42F4D300AB8685 /* ScheduleService */,
