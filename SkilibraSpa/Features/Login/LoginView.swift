@@ -13,6 +13,17 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
+            HStack {
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                }label: {
+                    Image(systemName: "chevron.backward")
+                        .foregroundStyle(.black)
+                }
+                .padding(.leading)
+                Spacer()
+            }
+            
             
             Spacer()
             
