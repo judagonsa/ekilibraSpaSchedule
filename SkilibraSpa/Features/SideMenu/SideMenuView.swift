@@ -25,7 +25,7 @@ struct SideMenuView: View {
                     if let dataImage = photo, let image = UIImage(data: dataImage) {
                         Image(uiImage: image)
                             .iconProfileMenu()
-                    } else {
+                    }else {
                         Image(systemName: "person.crop.circle")
                             .iconProfileMenu()
                     }
@@ -135,7 +135,10 @@ struct SideMenuView: View {
                 if let profile = UserdefaultHelper.shared.getProfile() {
                     name = profile.name
                     lastName = profile.lastName
+                    //viewModel.age = profile.age
                     phoneNumber = profile.phoneNumber
+                    //viewModel.gender = profile.gender
+                    //viewModel.observations = profile.observations
                     photo = profile.photo
                 }
             }
@@ -163,6 +166,13 @@ struct SideMenuView: View {
     }
 }
 
+extension View {
+    func getRect() -> CGRect {
+        return UIScreen.main.bounds
+    }
+}
+
 #Preview {
     SideMenuView(showMenu: .constant(true))
 }
+

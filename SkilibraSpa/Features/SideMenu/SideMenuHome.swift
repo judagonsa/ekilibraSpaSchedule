@@ -15,12 +15,11 @@ struct SideMenuHome: View {
     var body: some View {
         GeometryReader { geo in
             let totalWidth = geo.size.width
-            let sideBarWidth = max(totalWidth - 90, 0) // mismo margen, pero relativo a la ventana actual
+            let sideBarWidth = max(totalWidth - 90, 0)
             
             NavigationStack {
                 HStack(spacing: 0) {
                     
-                    // El ancho del menú lo fija el padre (sideBarWidth)
                     SideMenuView(showMenu: $showSideMenu)
                         .frame(width: sideBarWidth)
                     
@@ -46,7 +45,6 @@ struct SideMenuHome: View {
                 }
             }
             .onChange(of: geo.size) { _, newSize in
-                // Ajusta el offset si cambia el tamaño de ventana/orientación
                 let newSideBarWidth = max(newSize.width - 90, 0)
                 if showSideMenu {
                     offset = newSideBarWidth
