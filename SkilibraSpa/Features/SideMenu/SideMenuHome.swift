@@ -13,37 +13,50 @@ struct SideMenuHome: View {
     @State var lastStoredOffset: CGFloat = 0
     
     var body: some View {
-        
-        let sideBarWidth = getRect().width - 90
-        
-        NavigationStack {
-            HStack(spacing: 0) {
-                
-                SideMenuView(showMenu: $showSideMenu)
-                
-                HomeView(showMenu: $showSideMenu)
-                    .frame(width: getRect().width)
-                
-            }
-            .frame(width: getRect().width + sideBarWidth)
-            .offset(x: -sideBarWidth / 2)
-            .offset(x: offset)
-            .navigationBarTitleDisplayMode(.inline)
+        GeometryReader { geo in
+            let totalWidth = geo.size.width
+            let sideBarWidth = max(totalWidth - 90, 0) // mismo margen, pero relativo a la ventana actual
             
-        }
-        .animation(.easeOut, value: offset == 0)
-        .onChange(of: showSideMenu) { _, _ in
-            if showSideMenu && offset == 0 {
-                offset = sideBarWidth
-                lastStoredOffset = offset
+            NavigationStack {
+                HStack(spacing: 0) {
+                    
+                    // El ancho del menú lo fija el padre (sideBarWidth)
+                    SideMenuView(showMenu: $showSideMenu)
+                        .frame(width: sideBarWidth)
+                    
+                    HomeView(showMenu: $showSideMenu)
+                        .frame(width: totalWidth)
+                    
+                }
+                .frame(width: totalWidth + sideBarWidth)
+                .offset(x: -sideBarWidth / 2)
+                .offset(x: offset)
+                .navigationBarTitleDisplayMode(.inline)
             }
-            
-            if !showSideMenu && offset == sideBarWidth {
-                offset = 0
-                lastStoredOffset = 0
+            .animation(.easeOut, value: offset == 0)
+            .onChange(of: showSideMenu) { _, _ in
+                if showSideMenu && offset == 0 {
+                    offset = sideBarWidth
+                    lastStoredOffset = offset
+                }
+                
+                if !showSideMenu && offset == sideBarWidth {
+                    offset = 0
+                    lastStoredOffset = 0
+                }
+            }
+            .onChange(of: geo.size) { _, newSize in
+                // Ajusta el offset si cambia el tamaño de ventana/orientación
+                let newSideBarWidth = max(newSize.width - 90, 0)
+                if showSideMenu {
+                    offset = newSideBarWidth
+                    lastStoredOffset = newSideBarWidth
+                } else {
+                    offset = 0
+                    lastStoredOffset = 0
+                }
             }
         }
-        
     }
 }
 
