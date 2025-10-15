@@ -1,9 +1,9 @@
-//
-//  SideMenu.swift
-//  SkilibraSpa
-//
-//  Created by Julian González on 16/07/24.
-//
+    //
+    //  SideMenu.swift
+    //  SkilibraSpa
+    //
+    //  Created by Julian González on 16/07/24.
+    //
 
 import SwiftUI
 
@@ -52,60 +52,62 @@ struct SideMenuView: View {
             Divider()
             
             ScrollView(.vertical, showsIndicators: false) {
-                VStack {
-                    VStack (alignment: .leading, spacing: 40) {
-                        TabButton(icon: "person.crop.circle", title: "Perfil") {
-                            if showMenu {
-                                withAnimation {
-                                    showMenu.toggle()
-                                    showProfile.toggle()
-                                }
+                VStack (spacing: 25) {
+                    
+                    TabButton(icon: "person.crop.circle", title: "Perfil") {
+                        if showMenu {
+                            withAnimation {
+                                showMenu.toggle()
+                                showProfile.toggle()
                             }
                         }
-                        
-                        TabButton(icon: "calendar", title: "Mis citas") {
-                            
-                        }
-                        
-                        TabButton(icon: "gearshape.fill", title: "Configuración") {
-                            
-                        }
+                    }
+                    
+                    TabButton(icon: "calendar", title: "Mis citas") {
                         
                     }
-                    .padding()
-                    .padding(.leading)
-                    .padding(.top, 20)
                     
                     Divider()
                     
-                    TabButton(icon: "info.circle", title: "Acerca de") {
+                    TabButton(icon: "person.3.sequence.fill", title: "Nosotros") {
                         
                     }
-                    .padding()
-                    .padding(.leading)
+                    
+                    TabButton(icon: "location.fill", title: "Nuestros lugares") {
+                        
+                    }
                     
                     Divider()
                     
-                    VStack (alignment: .leading, spacing: 40) {
-                        TabButton(icon: "person.crop.circle", title: "Política y privacidad"){
-                            
-                        }
-                        TabButton(icon: "lock.shield", title: "Tratamiendo de datos"){
-                            
-                        }
+                    TabButton(icon: "person.crop.circle", title: "Política y privacidad"){
                         
                     }
-                    .padding()
-                    .padding(.leading)
+                    
+                    TabButton(icon: "shield.lefthalf.filled.badge.checkmark", title: "Tratamiendo de datos"){
+                        
+                    }
+                    
+                    
+                    
+                    TabButton(icon: "questionmark.message.fill", title: "Recomendaciones, quejas y reclamos"){
+                        
+                    }
+                    
+                    TabButton(icon: "questionmark.circle.fill", title: "Preguntas y respuestas"){
+                        
+                    }
+                    
+                    TabButton(icon: "phone.bubble.fill", title: "Contactenos"){
+                        
+                    }
                     
                     Divider()
                     
-                    TabButton(icon: "questionmark.circle", title: "Centro de ayuda"){
+                    TabButton(icon: "arrow.right.square.fill", title: "Cerrar sesión"){
                         
                     }
-                    .padding()
-                    .padding(.leading)
                 }
+                .padding(.horizontal)
                 
             }
             
@@ -135,10 +137,10 @@ struct SideMenuView: View {
                 if let profile = UserdefaultHelper.shared.getProfile() {
                     name = profile.name
                     lastName = profile.lastName
-                    //viewModel.age = profile.age
+                        //viewModel.age = profile.age
                     phoneNumber = profile.phoneNumber
-                    //viewModel.gender = profile.gender
-                    //viewModel.observations = profile.observations
+                        //viewModel.gender = profile.gender
+                        //viewModel.observations = profile.observations
                     photo = profile.photo
                 }
             }
