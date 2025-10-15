@@ -79,7 +79,7 @@ struct SideMenuView: View {
                     
                     Divider()
                     
-                    TabButton(icon: "person.crop.circle", title: "Política y privacidad"){
+                    TabButton(icon: "lock.shield.fill", title: "Política y privacidad"){
                         
                     }
                     
@@ -87,7 +87,7 @@ struct SideMenuView: View {
                         
                     }
                     
-                    
+                    Divider()
                     
                     TabButton(icon: "questionmark.message.fill", title: "Recomendaciones, quejas y reclamos"){
                         
