@@ -14,7 +14,7 @@ struct ScheduleServiceView: View {
     
     
     var body: some View {
-        VStack (alignment: .leading) {
+        VStack {
             
             ZStack {
                 HStack {
@@ -33,7 +33,6 @@ struct ScheduleServiceView: View {
                     Spacer()
                 }
             }
-            
             
             Form {
                 Picker("Please choose a color", selection: $viewModel.selectedService) {
@@ -54,22 +53,19 @@ struct ScheduleServiceView: View {
                     }
                 }
                 .pickerStyle(.menu)
-                
+                VStack {
+                    
+                    Text("Observaciones a tener en cuenta")
+                        .font(.system(size: 13, design: .rounded))
+                        .padding(.horizontal)
+                        .foregroundStyle(.gray)
+                        .padding(.top, 5)
+                    
+                    TextEditor(text: $viewModel.observations)
+                        .textObservation()
+                }
             }
             .accentColor(.red)
-            .scrollDisabled(true)
-            .frame(height: 250)
-            
-            Text("Observaciones a tener en cuenta")
-                .font(.system(size: 13, design: .rounded))
-                .padding(.horizontal)
-                .foregroundStyle(.gray)
-                .padding(.top, 5)
-            
-            TextEditor(text: $viewModel.observations)
-                .textObservation()
-            
-            Spacer()
             
             
             HStack (alignment: .center) {
@@ -86,8 +82,7 @@ struct ScheduleServiceView: View {
                 Text("Agendar")
             }
             .buttonFooter(color: .red) //MARK: poner color principal de la app
-            
-            
+               
         }
     }
 }
