@@ -19,14 +19,14 @@ struct SideMenuView: View {
     var body: some View {
         VStack(alignment: .leading) {
             
-            HStack (alignment: .top ) {
+            HStack (alignment: .top) {
                 VStack(alignment: .leading, spacing: 10) {
                     
                     if let dataImage = photo, let image = UIImage(data: dataImage) {
                         Image(uiImage: image)
                             .iconProfileMenu()
                     }else {
-                        Image(systemName: "person.crop.circle")
+                        Image(systemName: "person.crop.circle.fill")
                             .iconProfileMenu()
                     }
                     
@@ -54,7 +54,7 @@ struct SideMenuView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack (spacing: 25) {
                     
-                    TabButton(icon: "person.crop.circle", title: "Perfil") {
+                    TabButton(icon: "person.crop.circle.fill", title: "Perfil") {
                         if showMenu {
                             withAnimation {
                                 showMenu.toggle()
@@ -62,6 +62,7 @@ struct SideMenuView: View {
                             }
                         }
                     }
+                    .padding(.top, 20)
                     
                     TabButton(icon: "calendar", title: "Mis citas") {
                         

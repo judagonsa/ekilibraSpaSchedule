@@ -35,7 +35,7 @@ struct ScheduleServiceView: View {
             }
             
             Form {
-                Picker("Please choose a color", selection: $viewModel.selectedService) {
+                Picker("Selecciona el servicio", selection: $viewModel.selectedService) {
                     ForEach(viewModel.services, id: \.self) {
                         Text($0)
                     }
