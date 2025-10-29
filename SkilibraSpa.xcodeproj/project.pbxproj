@@ -34,16 +34,12 @@
 		91C6297F2C4740E700E4FBDB /* CircleBannersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C6297E2C4740E700E4FBDB /* CircleBannersView.swift */; };
 		91D193DE2EB1918000F27B2E /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D193DD2EB1918000F27B2E /* AboutUsView.swift */; };
 		91D193E02EB191AD00F27B2E /* AboutUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D193DF2EB191A500F27B2E /* AboutUsViewModel.swift */; };
-		91D193E32EB1936800F27B2E /* OurLocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D193E22EB1936800F27B2E /* OurLocationsView.swift */; };
-		91D193E52EB1937500F27B2E /* OurLocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D193E42EB1936E00F27B2E /* OurLocationsViewModel.swift */; };
 		91D193E82EB193DD00F27B2E /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D193E72EB193DD00F27B2E /* PrivacyPolicyView.swift */; };
 		91D193EA2EB193E800F27B2E /* PrivacyPolicyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D193E92EB193E100F27B2E /* PrivacyPolicyViewModel.swift */; };
 		91D193ED2EB1948100F27B2E /* HabeasDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D193EC2EB1948100F27B2E /* HabeasDataView.swift */; };
 		91D193EF2EB1948A00F27B2E /* HabeasDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D193EE2EB1948400F27B2E /* HabeasDataViewModel.swift */; };
 		91D193F22EB194FC00F27B2E /* ComplainsAndClaimsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D193F12EB194FC00F27B2E /* ComplainsAndClaimsView.swift */; };
 		91D193F42EB1950300F27B2E /* ComplainsAndClaimsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D193F32EB1950000F27B2E /* ComplainsAndClaimsViewModel.swift */; };
-		91D193F72EB1954600F27B2E /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D193F62EB1954600F27B2E /* QuestionsView.swift */; };
-		91D193F92EB1954E00F27B2E /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D193F82EB1954900F27B2E /* QuestionsViewModel.swift */; };
 		91E3DDCC2E8DFD5A0040977C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E3DDCB2E8DFD5A0040977C /* Assets.xcassets */; };
 		91E3DDD22E8DFFE70040977C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E3DDD12E8DFFE70040977C /* WelcomeView.swift */; };
 		91F5D25F2C441FF000FE2913 /* ScheduleServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5D25E2C441FF000FE2913 /* ScheduleServiceViewModel.swift */; };
@@ -98,16 +94,12 @@
 		91C6297E2C4740E700E4FBDB /* CircleBannersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBannersView.swift; sourceTree = "<group>"; };
 		91D193DD2EB1918000F27B2E /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		91D193DF2EB191A500F27B2E /* AboutUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewModel.swift; sourceTree = "<group>"; };
-		91D193E22EB1936800F27B2E /* OurLocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurLocationsView.swift; sourceTree = "<group>"; };
-		91D193E42EB1936E00F27B2E /* OurLocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurLocationsViewModel.swift; sourceTree = "<group>"; };
 		91D193E72EB193DD00F27B2E /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		91D193E92EB193E100F27B2E /* PrivacyPolicyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewModel.swift; sourceTree = "<group>"; };
 		91D193EC2EB1948100F27B2E /* HabeasDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabeasDataView.swift; sourceTree = "<group>"; };
 		91D193EE2EB1948400F27B2E /* HabeasDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabeasDataViewModel.swift; sourceTree = "<group>"; };
 		91D193F12EB194FC00F27B2E /* ComplainsAndClaimsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainsAndClaimsView.swift; sourceTree = "<group>"; };
 		91D193F32EB1950000F27B2E /* ComplainsAndClaimsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplainsAndClaimsViewModel.swift; sourceTree = "<group>"; };
-		91D193F62EB1954600F27B2E /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
-		91D193F82EB1954900F27B2E /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
 		91E3DDCB2E8DFD5A0040977C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91E3DDD12E8DFFE70040977C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		91F5D25E2C441FF000FE2913 /* ScheduleServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleServiceViewModel.swift; sourceTree = "<group>"; };
@@ -280,15 +272,6 @@
 			path = AboutUs;
 			sourceTree = "<group>";
 		};
-		91D193E12EB1934500F27B2E /* OurLocations */ = {
-			isa = PBXGroup;
-			children = (
-				91D193E42EB1936E00F27B2E /* OurLocationsViewModel.swift */,
-				91D193E22EB1936800F27B2E /* OurLocationsView.swift */,
-			);
-			path = OurLocations;
-			sourceTree = "<group>";
-		};
 		91D193E62EB193CC00F27B2E /* PrivacyPolicy */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,15 +297,6 @@
 				91D193F12EB194FC00F27B2E /* ComplainsAndClaimsView.swift */,
 			);
 			path = ComplainsAndClaims;
-			sourceTree = "<group>";
-		};
-		91D193F52EB1953800F27B2E /* Questions */ = {
-			isa = PBXGroup;
-			children = (
-				91D193F82EB1954900F27B2E /* QuestionsViewModel.swift */,
-				91D193F62EB1954600F27B2E /* QuestionsView.swift */,
-			);
-			path = Questions;
 			sourceTree = "<group>";
 		};
 		91E3DDCD2E8DFF280040977C /* App */ = {
@@ -357,11 +331,9 @@
 		91E3DDD02E8DFFB80040977C /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				91D193F52EB1953800F27B2E /* Questions */,
 				91D193F02EB194D800F27B2E /* ComplainsAndClaims */,
 				91D193EB2EB1943E00F27B2E /* HabeasData */,
 				91D193E62EB193CC00F27B2E /* PrivacyPolicy */,
-				91D193E12EB1934500F27B2E /* OurLocations */,
 				91D193DB2EB1915D00F27B2E /* AboutUs */,
 				91CB947A2E9DBBAD003C2C7F /* Welcome */,
 				918992D02C2B8C7400EFBFA1 /* Register */,
@@ -534,16 +506,13 @@
 				91D193F22EB194FC00F27B2E /* ComplainsAndClaimsView.swift in Sources */,
 				918992D62C2B8CEF00EFBFA1 /* RegisterViewModel.swift in Sources */,
 				9190037B2C2E4ADE00C92B8B /* LoginView.swift in Sources */,
-				91D193F72EB1954600F27B2E /* QuestionsView.swift in Sources */,
 				91F5D25F2C441FF000FE2913 /* ScheduleServiceViewModel.swift in Sources */,
 				91C53FE82C4C65480094DCFB /* SplashScreenView.swift in Sources */,
-				91D193F92EB1954E00F27B2E /* QuestionsViewModel.swift in Sources */,
 				91C6297B2C47387B00E4FBDB /* SideMenuView.swift in Sources */,
 				919E9F622C40B29B000ABE14 /* UserdefaultHelper.swift in Sources */,
 				91D193E02EB191AD00F27B2E /* AboutUsViewModel.swift in Sources */,
 				91D193DE2EB1918000F27B2E /* AboutUsView.swift in Sources */,
 				91D193EF2EB1948A00F27B2E /* HabeasDataViewModel.swift in Sources */,
-				91D193E32EB1936800F27B2E /* OurLocationsView.swift in Sources */,
 				91E3DDD22E8DFFE70040977C /* WelcomeView.swift in Sources */,
 				918992D42C2B8CD600EFBFA1 /* UserModel.swift in Sources */,
 				91D193E82EB193DD00F27B2E /* PrivacyPolicyView.swift in Sources */,
@@ -558,7 +527,6 @@
 				91C6297D2C473B4300E4FBDB /* SideMenuHome.swift in Sources */,
 				914D3B192C42F4E800AB8685 /* ScheduleServiceView.swift in Sources */,
 				914D3B162C42DD7100AB8685 /* ChangePasswordViewModel.swift in Sources */,
-				91D193E52EB1937500F27B2E /* OurLocationsViewModel.swift in Sources */,
 				9190037D2C2E4B7800C92B8B /* LoginViewModel.swift in Sources */,
 				914BF6782C2B3D5300BDE4E0 /* SkilibraSpaApp.swift in Sources */,
 			);
