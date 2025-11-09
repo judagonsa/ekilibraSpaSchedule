@@ -1,0 +1,93 @@
+# ===========================
+# Xcode / SwiftUI iOS Project
+# ===========================
+
+## User settings
+xcuserdata/
+
+## Build generated
+build/
+DerivedData/
+DerivedDataCustom/
+
+## Build products
+*.app
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Swift Package Manager
+Packages/
+Package.pins
+Package.resolved
+    .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+    .swiftpm/
+
+## CocoaPods
+Pods/
+Podfile.lock
+
+## Carthage
+Carthage/Build/
+Carthage/Checkouts/
+
+## Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+## Accio dependency manager
+Dependencies/
+    .accio/
+
+## Tuist
+Tuist/Dependencies/
+Tuist/Cache/
+
+## Xcode specific
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+## Xcode project files (if shared, uncomment the next line)
+# *.xcodeproj/*
+              # !*.xcodeproj/project.pbxproj
+              # !*.xcodeproj/xcshareddata/
+              
+              ## Swift Playgrounds
+              timeline.xctimeline
+              playground.xcworkspace
+              
+              ## Simulator logs
+              *.log
+              *.trace
+              *.tracev3
+              
+              ## macOS metadata
+              .DS_Store
+              .AppleDouble
+              .LSOverride
+              
+              ## Thumbnails
+              ._*
+              
+              ## Files that might appear on external disk
+              .Spotlight-V100
+              .Trashes
+              
+              ## IDE-specific
+              .idea/
+              .vscode/
+              *.swp
+              *.swo
+              
+              ## Environment files (if used)
+              .env
+              .env.*
+              
+              # ===========================
+              # END OF FILE
+              # ===========================
+
